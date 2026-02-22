@@ -10,11 +10,15 @@
             --accent: #00ff88;
             --accent-dark: #008f4c;
             --bg: #0a0a0a;
-            --glass: rgba(255, 255, 255, 0.03);
+            --glass: rgba(255, 255, 255, 0.05);
             --border: rgba(255, 255, 255, 0.1);
         }
 
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Inter', system-ui, -apple-system, sans-serif;
@@ -24,88 +28,180 @@
             overflow-x: hidden;
         }
 
+        /* Navigasyon Barı */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+            animation: slideDown 0.8s ease-out forwards;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #aaa;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-btn {
+            background: var(--accent);
+            color: black !important;
+            padding: 8px 20px;
+            border-radius: 8px;
+            font-weight: 800 !important;
+            transition: all 0.3s !important;
+        }
+
+        .nav-btn:hover {
+            background: white;
+            transform: scale(1.05);
+        }
+
         /* Arka Plan Animasyonu */
         .blob {
-            position: absolute;
-            width: 500px;
-            height: 500px;
+            position: fixed;
+            width: 60vw;
+            height: 60vw;
+            max-width: 600px;
+            max-height: 600px;
             background: radial-gradient(circle, rgba(0, 255, 136, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
             z-index: -1;
-            filter: blur(50px);
-            animation: move 20s infinite alternate;
+            filter: blur(80px);
+            animation: move 25s infinite alternate ease-in-out;
+            top: 10%;
+            left: 20%;
         }
 
         @keyframes move {
-            from { transform: translate(-10%, -10%); }
-            to { transform: translate(20%, 20%); }
+            from { transform: translate(-10%, -10%) scale(1); }
+            to { transform: translate(30%, 30%) scale(1.2); }
         }
 
+        /* Scroll ile Görünme Animasyonu Sınıfları */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hero Bölümü */
         header {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 20px;
-            background: radial-gradient(circle at center, rgba(0, 255, 136, 0.05) 0%, transparent 100%);
+            padding: 100px 20px 40px;
+            background: radial-gradient(circle at center, rgba(0, 255, 136, 0.03) 0%, transparent 100%);
         }
 
         .hero-badge {
             background: var(--glass);
             border: 1px solid var(--border);
-            padding: 8px 16px;
+            padding: 8px 20px;
             border-radius: 100px;
             font-size: 0.9rem;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             color: var(--accent);
             backdrop-filter: blur(10px);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            animation: fadeIn 1s ease-out forwards;
+            opacity: 0;
+            animation-delay: 0.2s;
         }
 
         h1 {
-            font-size: clamp(3rem, 10vw, 6rem);
+            font-size: clamp(3rem, 10vw, 6.5rem);
             font-weight: 800;
-            letter-spacing: -2px;
+            letter-spacing: -3px;
             margin-bottom: 20px;
-            background: linear-gradient(to bottom, #fff 30%, #888 100%);
+            background: linear-gradient(to bottom, #fff 30%, #666 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            animation: slideUp 1s ease-out forwards;
+            opacity: 0;
+            animation-delay: 0.4s;
         }
 
         .tagline {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             color: #a0a0a0;
-            max-width: 600px;
-            margin-bottom: 40px;
+            max-width: 650px;
+            margin-bottom: 45px;
+            animation: slideUp 1s ease-out forwards;
+            opacity: 0;
+            animation-delay: 0.6s;
         }
 
         .cta-group {
             display: flex;
-            gap: 15px;
+            gap: 20px;
             flex-wrap: wrap;
             justify-content: center;
+            animation: fadeIn 1s ease-out forwards;
+            opacity: 0;
+            animation-delay: 0.8s;
         }
 
         .btn {
             padding: 16px 32px;
-            border-radius: 12px;
+            border-radius: 14px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            font-size: 1.1rem;
         }
 
         .btn-primary {
             background-color: var(--accent);
             color: #000;
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
         }
 
         .btn-primary:hover {
             background-color: #fff;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 255, 136, 0.4);
         }
 
         .btn-secondary {
@@ -115,16 +211,18 @@
         }
 
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.1);
             border-color: #fff;
+            transform: translateY(-5px);
         }
 
+        /* Özellikler */
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            gap: 30px;
             padding: 100px 5%;
-            max-width: 1200px;
+            max-width: 1300px;
             margin: 0 auto;
         }
 
@@ -133,73 +231,249 @@
             border: 1px solid var(--border);
             padding: 40px;
             border-radius: 24px;
-            transition: 0.3s;
-            backdrop-filter: blur(10px);
+            transition: 0.4s;
+            backdrop-filter: blur(12px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+            transition: left 0.5s;
+        }
+
+        .card:hover::before {
+            left: 100%;
         }
 
         .card:hover {
             border-color: var(--accent);
-            background: rgba(0, 255, 136, 0.02);
+            background: rgba(0, 255, 136, 0.05);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
         }
 
-        .card i { color: var(--accent); margin-bottom: 20px; }
+        .card i { color: var(--accent); margin-bottom: 25px; transition: 0.3s; }
+        .card:hover i { transform: scale(1.1); }
         .card h3 { margin-bottom: 15px; font-size: 1.5rem; }
-        .card p { color: #888; }
+        .card p { color: #888; font-size: 1rem; }
+
+        /* Hash Bölümü */
+        .hash-section {
+            padding: 80px 5%;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .hash-box {
+            background: linear-gradient(145deg, rgba(0, 255, 136, 0.05) 0%, rgba(0,0,0,0.5) 100%);
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            padding: 50px;
+            border-radius: 32px;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hash-box::after {
+            content: '';
+            position: absolute;
+            top: -50%; right: -50%;
+            width: 300px; height: 300px;
+            background: radial-gradient(circle, rgba(0, 255, 136, 0.1), transparent);
+            filter: blur(50px);
+        }
+
+        .hash-code {
+            background: rgba(0,0,0,0.8);
+            padding: 20px;
+            border-radius: 12px;
+            font-family: 'Fira Code', monospace;
+            color: var(--accent);
+            word-break: break-all;
+            border: 1px solid var(--border);
+            margin: 25px 0;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .commands {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .command-item h4 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            color: #eee;
+        }
+
+        code {
+            display: block;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            color: #ccc;
+            border: 1px solid var(--border);
+            transition: 0.3s;
+        }
+
+        code:hover {
+            border-color: rgba(255,255,255,0.3);
+        }
 
         footer {
             padding: 60px 20px;
+            text-align: center;
             border-top: 1px solid var(--border);
             color: #555;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            margin-top: 50px;
         }
 
-        footer a { color: var(--accent); text-decoration: none; }
+        footer a { color: var(--accent); text-decoration: none; font-weight: 600; }
+
+        /* Anahtar Kare Animasyonları */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+
+        /* Mobil Menü İçin Ufak Ayar */
+        @media (max-width: 768px) {
+            .nav-links { display: none; } /* Mobilde çok kalabalık olmasın diye gizledik, geliştirilebilir */
+            h1 { font-size: 3rem; }
+            .hash-box { padding: 30px; }
+        }
     </style>
 </head>
 <body>
 
+    <nav>
+        <a href="#" class="logo">
+            <i data-lucide="leaf" color="var(--accent)"></i> Botan
+        </a>
+        <div class="nav-links">
+            <a href="#home">Ana Sayfa</a>
+            <a href="#features">Özellikler</a>
+            <a href="#verify">Doğrulama</a>
+            <a href="https://github.com/Botan-linux/Botan-sprout/releases/download/v1.0-sprout/botan-linux-sprout-1.0-x86_64.iso" class="nav-btn">ISO İndir</a>
+        </div>
+    </nav>
+
     <div class="blob"></div>
 
-    <header>
-        <div class="hero-badge">Botan Sprout v1.0 Yayında!</div>
+    <header id="home">
+        <div class="hero-badge">
+            <i data-lucide="sparkles" size="16"></i>
+            Botan Sprout v1.0 Yayında!
+        </div>
         <h1>🌱 Botan Linux</h1>
-        <p class="tagline">Gelecek Botan ile büyüyecek. Sadeliği, modern mimariyle harmanlayan en hafif Arch tabanlı deneyim.</p>
+        <p class="tagline">Gelecek Botan ile büyüyecek. Sadeliği, modern mimariyle harmanlayan en hafif Arch tabanlı deneyim. Özgürlüğün yeni rengi.</p>
         
         <div class="cta-group">
             <a href="https://github.com/Botan-linux/Botan-sprout/releases/download/v1.0-sprout/botan-linux-sprout-1.0-x86_64.iso" class="btn btn-primary">
-                <i data-lucide="download"></i> ISO'yu İndir
+                <i data-lucide="download"></i> İndirmeye Başla
             </a>
             <a href="https://github.com/Botan-linux/Botan-sprout" class="btn btn-secondary">
-                <i data-lucide="github"></i> Kaynak Kodu
+                <i data-lucide="github"></i> GitHub Deposu
             </a>
         </div>
     </header>
 
-    <section class="features">
+    <section id="features" class="features reveal">
         <div class="card">
-            <i data-lucide="zap" size="32"></i>
+            <i data-lucide="zap" size="40"></i>
             <h3>Üstün Verimlilik</h3>
-            <p>Modern donanımların tüm gücünü kullanırken, kaynak tüketimini minimumda tutan optimize edilmiş çekirdek yapısı.</p>
+            <p>Modern donanımların tüm gücünü kullanırken, kaynak tüketimini minimumda tutan optimize edilmiş çekirdek yapısı sayesinde bilgisayarınız uçuşa geçsin.</p>
         </div>
         <div class="card">
-            <i data-lucide="terminal" size="32"></i>
+            <i data-lucide="terminal-square" size="40"></i>
             <h3>Zeki Terminal</h3>
-            <p>Varsayılan Fish Shell ile akıllı otomatik tamamlama ve büyüleyici bir terminal arayüzü sizi bekliyor.</p>
+            <p>Varsayılan Fish Shell ile akıllı otomatik tamamlama, renklendirilmiş komutlar ve büyüleyici bir terminal arayüzü sizi bekliyor.</p>
         </div>
         <div class="card">
-            <i data-lucide="shield-check" size="32"></i>
+            <i data-lucide="cpu" size="40"></i>
             <h3>Kaya Gibi Sağlam</h3>
-            <p>Arch Linux LTS tabanı üzerine inşa edilen Botan, en güncel güvenlik yamalarını anında sisteminize taşır.</p>
+            <p>Arch Linux tabanı üzerine inşa edilen Botan, en güncel güvenlik yamalarını ve yeni paketleri anında sisteminize taşır.</p>
+        </div>
+    </section>
+
+    <section id="verify" class="hash-section reveal">
+        <div class="hash-box">
+            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                <i data-lucide="shield-check" size="48" style="color: var(--accent);"></i>
+                <h2 style="font-size: 2.2rem;">ISO Doğrulama (SHA256)</h2>
+            </div>
+            <p style="color: #bbb; max-width: 800px; font-size: 1.1rem;">İndirdiğiniz <b>botan-sprout-1.0-x86_64.iso</b> dosyasının orijinal ve hatasız olduğunu doğrulamak için aşağıdaki karma (hash) kodunu kontrol edin.</p>
+            
+            <div class="hash-code">
+                <span>a06b035b094c5790a5a2a810d58b4ff97aea1dc989529a6a7175f5c214e1302f</span>
+                <i data-lucide="copy" size="20" style="cursor: pointer; color: #888;" onclick="alert('Hash kopyalandı!')" title="Kopyala"></i>
+            </div>
+
+            <div class="commands">
+                <div class="command-item">
+                    <h4><i data-lucide="terminal" size="20"></i> Linux & macOS</h4>
+                    <code>sha256sum botan-sprout-1.0-x86_64.iso</code>
+                </div>
+                <div class="command-item">
+                    <h4><i data-lucide="monitor" size="20"></i> Windows (PowerShell)</h4>
+                    <code>Get-FileHash .\botan-sprout-1.0-x86_64.iso -Algorithm SHA256</code>
+                </div>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Botan Linux Project. <br> 
-        <a href="https://github.com/Botan-linux">Botan-linux Organizasyonu</a> tarafından geliştirilmiştir.</p>
+        <p>&copy; 2026 Botan Linux Project. <br><br> 
+        <a href="https://github.com/Botan-linux">Botan-linux Organizasyonu</a> tarafından açık kaynak olarak geliştirilmiştir.</p>
     </footer>
 
     <script>
+        // İkonları yükle
         lucide.createIcons();
+
+        // Scroll Animasyonları (Sayfa kaydırıldıkça öğelerin belirmesi)
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100; // Öğenin görünmesi için ekranda ne kadar girmesi gerektiği
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+        // Sayfa yüklendiğinde ilk elementleri kontrol et
+        reveal();
     </script>
 </body>
 </html>
