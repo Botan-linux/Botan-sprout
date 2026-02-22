@@ -29,3 +29,4 @@ Bu ISO'yu kendi bilgisayarınızda oluşturmak isterseniz:
 1. **Gerekli paketleri kurun:**
    ```bash
    sudo pacman -S archiso
+   Gelecek Botan ile büyüyecek...
