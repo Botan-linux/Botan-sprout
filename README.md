@@ -1,32 +1,44 @@
 # 🌱 Botan Linux (Sprout v1.0)
 
-**Botan Linux**, sadelik ve estetiği bir araya getiren, Arch Linux tabanlı, modern bir işletim sistemi projesidir. "Sprout" (Filiz) sürümü, bu ekosistemin ilk adımıdır.
+<p align="center">
+  <img src="https://img.shields.io/badge/Version-1.0_Sprout-00ff88?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Base-Arch_Linux-1793d1?style=for-the-badge&logo=arch-linux" />
+  <img src="https://img.shields.io/badge/License-GPL--3.0-green?style=for-the-badge" />
+</p>
+
+<p align="center">
+  <b>Gelecek Botan ile büyüyecek.</b><br>
+  Sadelik ve estetiği modern mimariyle harmanlayan, en hafif Arch tabanlı deneyim.
+</p>
 
 ---
 
-## 🌿 Hakkında
-Botan Linux, kullanıcılara "saf" bir Arch deneyimi sunarken, kurulum sürecini ve ilk yapılandırmayı kolaylaştırmayı hedefler. 
-
-* **Sürüm:** 1.0 (Sprout)
-* **Taban:** Arch Linux (LTS Kernel)
-* **Masaüstü Ortamı:** KDE Plasma (Minimal)
-* **Kabuk:** Fish Shell (Varsayılan)
-* **Kurulumcu:** Calamares (Botan Temalı)
+## 🌐 Resmi Web Sitesi
+Botan Linux hakkında daha fazla bilgi edinmek ve görsel deneyimi yaşamak için web sitemizi ziyaret edin:
+👉 **[botan-linux.github.io/Botan-sprout/](https://botan-linux.github.io/Botan-sprout/)**
 
 ---
 
-## ✨ Özellikler
-* **Saf Deneyim:** Gereksiz paketlerden arındırılmış, hafif ve hızlı bir yapı.
-* **Dost Canlısı Terminal:** Varsayılan olarak gelen `fish` kabuğu ile akıllı tamamlama ve renkli terminal deneyimi.
-* **Modern Kurulum:** Özelleştirilmiş Calamares kurulumcu sayesinde dakikalar içinde hazır sistem.
-* **Güçlü Temel:** Uzun süreli destek sunan `linux-lts` çekirdeği ile eski ve yeni donanımlarda kararlılık.
+## 🌿 Sprout v1.0 Özellikleri
+Botan Linux, kullanıcılara "saf" bir Arch deneyimi sunarken modern dokunuşlarla kullanım kolaylığı sağlar.
+
+- **🚀 Hafif Mimari:** Modern sistem kaynaklarını en verimli şekilde kullanan optimize yapı.
+- **🐚 Fish Shell:** Akıllı otomatik tamamlama ve büyüleyici bir terminal arayüzü varsayılan olarak gelir.
+- **🎨 KDE Plasma:** Minimalist ve özelleştirilmiş bir masaüstü deneyimi.
+- **🛠️ Calamares:** Botan temalı, hızlı ve güvenilir grafiksel kurulumcu.
+- **🛡️ LTS Kernel:** Uzun süreli destek sunan çekirdek ile sarsılmaz kararlılık.
 
 ---
 
-## 🏗️ İnşa Etme (Build)
-Bu ISO'yu kendi bilgisayarınızda oluşturmak isterseniz:
+## 📥 İndir (Release)
+En güncel ISO dosyasını doğrudan GitHub üzerinden indirebilirsiniz:
+👉 **[Botan Linux v1.0 ISO İndir](https://github.com/Botan-linux/Botan-sprout/releases/tag/v1.0-sprout)**
+
+---
+
+## 🏗️ ISO İnşa Etme (Build)
+Kendi özelleştirilmiş Botan ISO'nuzu oluşturmak için:
 
 1. **Gerekli paketleri kurun:**
    ```bash
    sudo pacman -S archiso
-   Gelecek Botan ile büyüyecek...
