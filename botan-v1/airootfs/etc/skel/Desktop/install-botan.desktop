@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Botan Linux'u Kur
+Comment=Sistemi bilgisayarınıza kurun
+Exec=sudo calamares
+Icon=system-software-install
+Terminal=false
+Categories=System;

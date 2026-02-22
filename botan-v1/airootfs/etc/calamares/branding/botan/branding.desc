@@ -1,0 +1,14 @@
+componentName: botan
+welcomeStyleCalamares:   true
+welcomeExpandingLogo:   true
+windowExpanding:    normal
+windowSize: 800px,520px
+strings:
+    productName:         Botan Linux
+    shortProductName:    Botan
+    productUrl:          https://botan-linux.github.io/Botan-sprout/
+    supportUrl:          https://github.com/Botan-linux/Botan-sprout/issues
+style:
+   sidebarBackground:    "#0a0a0a"
+   sidebarText:          "#00ff88"
+   sidebarTextSelect:    "#ffffff"
