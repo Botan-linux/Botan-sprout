@@ -1,3 +1,4 @@
+
 # 🌱 Botan Linux (Sprout v1.0)
 
 <p align="center">
@@ -31,8 +32,8 @@ Botan Linux, kullanıcılara "saf" bir Arch deneyimi sunarken modern dokunuşlar
 ---
 
 ## 📥 İndir (Release)
-En güncel ISO dosyasını doğrudan GitHub üzerinden indirebilirsiniz:
-👉 **[Botan Linux v1.0 ISO İndir](https://github.com/Botan-linux/Botan-sprout/releases/tag/v1.0-sprout)**
+En güncel ISO dosyasını doğrudan Google Drive üzerinden (Hızlı İndirme) indirebilirsiniz:
+👉 **[Botan Linux v1.0 ISO İndir (Direct Download)](https://drive.google.com/uc?export=download&id=1vOMT_499z-DegcoeS-0dGSYcKnhqVbjo)**
 
 ---
 
