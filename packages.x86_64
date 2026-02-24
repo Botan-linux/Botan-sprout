@@ -5,6 +5,9 @@ linux-lts-headers
 linux-firmware
 sof-firmware
 linux-firmware-marvell
+memtest86+
+edk2-shell
+syslinux
 base-devel
 sudo
 mkinitcpio
