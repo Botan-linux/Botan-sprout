@@ -1,0 +1,27 @@
+---
+componentName: botan
+
+welcomeStyleCalamares:   true
+welcomeExpandingLogo:    true
+windowExpanding:        normal
+windowSize: 800,520
+
+strings:
+    productName:         "Botan Linux"
+    shortProductName:    "Botan"
+    productUrl:          "https://botan-linux.github.io/Botan-sprout/"
+    supportUrl:          "https://github.com/Botan-linux/Botan-sprout/issues"
+
+images:
+    productLogo:         "logo.png"
+    productIcon:         "logo.png"
+    productWelcome:      "welcome.png"
+
+# Bunlar herhangi bir grubun içinde değil, tek başına durmalı:
+slideshow:               "show.qml"
+slideshowAPI:            2
+
+style:
+   sidebarBackground:    "#0a0a0a"
+   sidebarText:          "#00ff88"
+   sidebarTextSelect:    "#ffffff"
