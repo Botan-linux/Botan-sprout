@@ -1,6 +1,6 @@
 name: Botan ISO Builder - Sprout v1.0
 on:
-  workflow_dispatch: # Manuel başlatma butonu
+  workflow_dispatch:
 
 jobs:
   build:
@@ -13,23 +13,11 @@ jobs:
         run: |
           sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /usr/local/share/boost /usr/lib/jvm
           sudo docker image prune -af
-          sudo docker system prune -af
 
-      - name: 3. Çalışma Alanını Hazırla (Zekice Çözüm)
+      - name: 3. Çalışma Alanını Hazırla
         run: |
           sudo rm -rf work_dir out_dir
-          mkdir -p $(pwd)/work_dir
-          mkdir -p $(pwd)/out_dir
-          
-          # ÇAKIŞMA ÇÖZÜMÜ: Senin özel dosyanı yedekle ve airootfs içinden sil
-          # Böylece pacman hata vermeden kurulacak.
-          if [ -f airootfs/etc/calamares/modules/netinstall.conf ]; then
-            mkdir -p temp_backup
-            cp airootfs/etc/calamares/modules/netinstall.conf temp_backup/
-            rm -f airootfs/etc/calamares/modules/netinstall.conf
-            echo "Özel netinstall.conf yedeklendi ve çatışma önlendi."
-          fi
-          
+          mkdir -p work_dir out_dir
           find airootfs/ -name ".gitkeep" -delete || true
           sudo chmod -R 755 .
 
@@ -40,32 +28,20 @@ jobs:
             -v $(pwd)/work_dir:/work \
             -v $(pwd)/out_dir:/output \
             archlinux:latest /bin/bash -c "
-              # A. Keyring ve Anahtarları Hazırla
               pacman-key --init
               pacman-key --populate archlinux
               pacman-key --recv-keys A367FB01AE54040E
               pacman-key --lsign-key A367FB01AE54040E
               
-              # B. Araçları Kur
-              pacman -Syu --noconfirm --overwrite '*' archiso grub mtools libisoburn dosfstools
+              pacman -Syu --noconfirm archiso grub mtools libisoburn dosfstools
               
-              # C. mkarchiso'yu yamala (Ekstra güvenlik)
-              sed -i 's/pacman_options=(/pacman_options=(--overwrite \"*\" /' /usr/bin/mkarchiso
-              
-              # D. Senin özel dosyanı kurulan sisteme zorla enjekte et
-              # Bu script, paketler kurulduktan sonra senin yedeklediğin dosyayı geri yerine koyar.
-              # Böylece Calamares senin linkini görür!
-              mkdir -p /iso/airootfs/etc/calamares/modules/
-              [ -f /iso/temp_backup/netinstall.conf ] && cp /iso/temp_backup/netinstall.conf /iso/airootfs/etc/calamares/modules/netinstall.conf
-              
-              # E. Derlemeyi Başlat
+              # Derleme Başlıyor - Dosya çakışması riski bitti!
               mkarchiso -v -w /work -o /output /iso
             "
 
-      - name: 5. Final Temizliği (Work Sil)
+      - name: 5. Final Temizliği
         if: always()
-        run: |
-          sudo rm -rf work_dir temp_backup
+        run: sudo rm -rf work_dir
 
       - name: 6. GitHub Üzerinde Yedekle (Artifact)
         if: success()
