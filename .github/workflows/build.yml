@@ -1,0 +1,40 @@
+name: Botan ISO Builder
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Free Disk Space
+        run: |
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /opt/ghc
+          sudo rm -rf "/usr/local/share/boost"
+          sudo docker image prune -af 
+
+      - name: Build ISO
+        run: |
+          mkdir -p $(pwd)/work_dir
+          mkdir -p $(pwd)/out_dir
+          find airootfs/ -name ".gitkeep" -delete || true
+          sudo chmod -R 755 .
+
+          docker run --privileged --rm \
+            -v $(pwd):/iso \
+            -v $(pwd)/work_dir:/work \
+            -v $(pwd)/out_dir:/output \
+            archlinux:latest /bin/bash -c "
+              pacman -Syu --noconfirm archiso &&
+              pacman -Scc --noconfirm && 
+              mkarchiso -v -w /work -o /output /iso
+            "
+
+      - name: Upload to Transfer
+        run: |
+          ORIGINAL_ISO=$(ls out_dir/*.iso)
+          mv "$ORIGINAL_ISO" out_dir/botan-sprout-1.0-x86_64.iso
+          curl --upload-file out_dir/botan-sprout-1.0-x86_64.iso https://transfer.sh/botan-sprout-1.0-x86_64.iso
