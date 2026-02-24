@@ -1,8 +1,27 @@
-- name: "Masaüstü Seç"
-  description: "Hangi masaüstünü istersin?"
+- name: "Masaüstü Seçimi"
+  description: "Botan Linux için favori çalışma alanınızı seçin."
   critical: true
   groups:
     - name: "KDE Plasma"
-      packages: [plasma-desktop, dolphin, konsole, sddm]
+      description: "Modern, şık ve çok özelleştirilebilir."
+      packages: [plasma-desktop, dolphin, konsole, sddm, plasma-nm]
+    
     - name: "GNOME"
-      packages: [gnome-shell, nautilus, gnome-terminal, gdm]
+      description: "Sade, temiz ve tablet gibi akıcı."
+      packages: [gnome-shell, nautilus, gnome-terminal, gdm, gnome-control-center]
+    
+    - name: "XFCE"
+      description: "Çok hızlı ve az ram harcar (Eski bilgisayarlar için)."
+      packages: [xfce4, xfce4-goodies, lightdm, lightdm-gtk-greeter, network-manager-applet]
+    
+    - name: "Cinnamon"
+      description: "Geleneksel masaüstü sevenler için (Mint tarzı)."
+      packages: [cinnamon, nemo, kitty, lightdm, lightdm-gtk-greeter]
+
+    - name: "MATE"
+      description: "Klasik ve güvenilir."
+      packages: [mate, mate-extra, lightdm, lightdm-gtk-greeter]
+
+    - name: "Hyprland"
+      description: "Pencere yöneticisi sevenler için çok havalı ve modern."
+      packages: [hyprland, kitty, waybar, wofi, dunst]
