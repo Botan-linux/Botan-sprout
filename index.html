@@ -335,13 +335,56 @@
             border-color: rgba(255,255,255,0.3);
         }
 
+        /* Deepnote Bölümü */
+        .deepnote-section {
+            padding: 40px 5%;
+            max-width: 1000px;
+            margin: 0 auto 40px auto;
+        }
+
+        .deepnote-box {
+            background: rgba(255, 150, 0, 0.05);
+            border-left: 4px solid #ff9600;
+            border-radius: 0 12px 12px 0;
+            padding: 25px;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .deepnote-icon {
+            color: #ff9600;
+            flex-shrink: 0;
+            margin-top: 5px;
+        }
+
+        .deepnote-content h3 {
+            color: #fff;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .deepnote-content p {
+            color: #bbb;
+            font-size: 0.95rem;
+        }
+
+        .deepnote-content code {
+            display: inline-block;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 5px 10px;
+            margin-top: 10px;
+            border: 1px solid rgba(255, 150, 0, 0.2);
+            color: #ff9600;
+        }
+
         footer {
             padding: 60px 20px;
             text-align: center;
             border-top: 1px solid var(--border);
             color: #555;
             font-size: 0.95rem;
-            margin-top: 50px;
+            margin-top: 20px;
         }
 
         footer a { color: var(--accent); text-decoration: none; font-weight: 600; }
@@ -367,6 +410,7 @@
             .nav-links { display: none; } /* Mobilde çok kalabalık olmasın diye gizledik, geliştirilebilir */
             h1 { font-size: 3rem; }
             .hash-box { padding: 30px; }
+            .deepnote-box { flex-direction: column; gap: 10px; }
         }
     </style>
 </head>
@@ -380,7 +424,8 @@
             <a href="#home">Ana Sayfa</a>
             <a href="#features">Özellikler</a>
             <a href="#verify">Doğrulama</a>
-            <a href="https://archive.org/download/botan-linux/botan-sprout-1.0-x86_64.iso" class="nav-btn" download>ISO İndir</a>
+            <a href="#deepnote">Dipnot</a>
+            <a href="https://drive.google.com/uc?export=download&id=1vOMT_499z-DegcoeS-0dGSYcKnhqVbjo" class="nav-btn">ISO İndir</a>
         </div>
     </nav>
 
@@ -395,7 +440,7 @@
         <p class="tagline">Gelecek Botan ile büyüyecek. Sadeliği, modern mimariyle harmanlayan en hafif Arch tabanlı deneyim. Özgürlüğün yeni rengi.</p>
         
         <div class="cta-group">
-            <a href="https://archive.org/download/botan-linux/botan-sprout-1.0-x86_64.iso" class="btn btn-primary" download>
+            <a href="https://drive.google.com/uc?export=download&id=1vOMT_499z-DegcoeS-0dGSYcKnhqVbjo" class="btn btn-primary">
             <i data-lucide="download"></i> İndirmeye Başla
             </a>
             <a href="https://github.com/Botan-linux/Botan-sprout" class="btn btn-secondary">
@@ -431,7 +476,7 @@
             <p style="color: #bbb; max-width: 800px; font-size: 1.1rem;">İndirdiğiniz <b>botan-sprout-1.0-x86_64.iso</b> dosyasının orijinal ve hatasız olduğunu doğrulamak için aşağıdaki karma (hash) kodunu kontrol edin.</p>
             
             <div class="hash-code">
-                <span>a06b035b094c5790a5a2a810d58b4ff97aea1dc989529a6a7175f5c214e1302f</span>
+                <span>9aa63644e970243fce6a4de7561e4195d4cbe69b3e15f87ed5cf093245735300</span>
                 <i data-lucide="copy" size="20" style="cursor: pointer; color: #888;" onclick="alert('Hash kopyalandı!')" title="Kopyala"></i>
             </div>
 
@@ -444,6 +489,19 @@
                     <h4><i data-lucide="monitor" size="20"></i> Windows (PowerShell)</h4>
                     <code>Get-FileHash .\botan-sprout-1.0-x86_64.iso -Algorithm SHA256</code>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="deepnote" class="deepnote-section reveal">
+        <div class="deepnote-box">
+            <div class="deepnote-icon">
+                <i data-lucide="info" size="32"></i>
+            </div>
+            <div class="deepnote-content">
+                <h3>📌 Önemli Not (Deepnote)</h3>
+                <p>Bu ISO dosyaları 2-3 günde bir derlenip analiz edilmektedir. Mümkün olan en kararlı ve güncel deneyimi yaşamak için, Botan Linux'u bilgisayarınıza kurduktan hemen sonra sisteminizi güncellemenizi tavsiye ederiz.</p>
+                <code>sudo pacman -Syu</code>
             </div>
         </div>
     </section>
