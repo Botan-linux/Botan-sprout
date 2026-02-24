@@ -20,21 +20,24 @@ jobs:
         run: |
           mkdir -p $(pwd)/work_dir
           mkdir -p $(pwd)/out_dir
+          # .gitkeep dosyalarını temizle (ISO içinde gözükmesinler)
           find airootfs/ -name ".gitkeep" -delete || true
-          sudo chmod -R 755 .
-
+          
+          # Docker içinde derlemeyi başlat
           docker run --privileged --rm \
             -v $(pwd):/iso \
             -v $(pwd)/work_dir:/work \
             -v $(pwd)/out_dir:/output \
             archlinux:latest /bin/bash -c "
-              pacman -Syu --noconfirm archiso &&
+              # Gerekli araçları kur (grub, mtools, libisoburn ve dosfstools şart)
+              pacman -Syu --noconfirm archiso grub mtools libisoburn dosfstools &&
               pacman -Scc --noconfirm && 
+              # ISO Derleme komutu
               mkarchiso -v -w /work -o /output /iso
             "
 
       - name: Upload to Transfer
         run: |
-          ORIGINAL_ISO=$(ls out_dir/*.iso)
-          mv "$ORIGINAL_ISO" out_dir/botan-sprout-1.0-x86_64.iso
-          curl --upload-file out_dir/botan-sprout-1.0-x86_64.iso https://transfer.sh/botan-sprout-1.0-x86_64.iso
+          ISO_PATH=$(ls out_dir/*.iso)
+          echo "Uploading $ISO_PATH to Transfer.sh..."
+          curl --upload-file "$ISO_PATH" https://transfer.sh/botan-sprout-1.0-x86_64.iso
