@@ -11,18 +11,25 @@ jobs:
 
       - name: 2. Maksimum Disk Temizliği
         run: |
-          # GitHub sunucusunda yer açıyoruz
           sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /usr/local/share/boost /usr/lib/jvm
           sudo docker image prune -af
           sudo docker system prune -af
 
-      - name: 3. Çalışma Alanını Hazırla (Kesin Temizlik)
+      - name: 3. Çalışma Alanını Hazırla (Zekice Çözüm)
         run: |
-          # Başlarken work_dir'i mutlaka temizliyoruz
           sudo rm -rf work_dir out_dir
           mkdir -p $(pwd)/work_dir
           mkdir -p $(pwd)/out_dir
-          # .gitkeep temizliği ve izinler
+          
+          # ÇAKIŞMA ÇÖZÜMÜ: Senin özel dosyanı yedekle ve airootfs içinden sil
+          # Böylece pacman hata vermeden kurulacak.
+          if [ -f airootfs/etc/calamares/modules/netinstall.conf ]; then
+            mkdir -p temp_backup
+            cp airootfs/etc/calamares/modules/netinstall.conf temp_backup/
+            rm -f airootfs/etc/calamares/modules/netinstall.conf
+            echo "Özel netinstall.conf yedeklendi ve çatışma önlendi."
+          fi
+          
           find airootfs/ -name ".gitkeep" -delete || true
           sudo chmod -R 755 .
 
@@ -39,21 +46,26 @@ jobs:
               pacman-key --recv-keys A367FB01AE54040E
               pacman-key --lsign-key A367FB01AE54040E
               
-              # B. Araçları Kur (Docker'ın kendi içine --overwrite ile kuruyoruz)
+              # B. Araçları Kur
               pacman -Syu --noconfirm --overwrite '*' archiso grub mtools libisoburn dosfstools
               
-              # C. Çatışmayı Kökten Çözmek İçin mkarchiso'yu Yamala
-              # Bu komut mkarchiso'nun içindeki pacman parametrelerine --overwrite ekler
+              # C. mkarchiso'yu yamala (Ekstra güvenlik)
               sed -i 's/pacman_options=(/pacman_options=(--overwrite \"*\" /' /usr/bin/mkarchiso
               
-              # D. Derlemeyi Başlat
+              # D. Senin özel dosyanı kurulan sisteme zorla enjekte et
+              # Bu script, paketler kurulduktan sonra senin yedeklediğin dosyayı geri yerine koyar.
+              # Böylece Calamares senin linkini görür!
+              mkdir -p /iso/airootfs/etc/calamares/modules/
+              [ -f /iso/temp_backup/netinstall.conf ] && cp /iso/temp_backup/netinstall.conf /iso/airootfs/etc/calamares/modules/netinstall.conf
+              
+              # E. Derlemeyi Başlat
               mkarchiso -v -w /work -o /output /iso
             "
 
       - name: 5. Final Temizliği (Work Sil)
-        if: always() # Hata olsa bile diski temizle
+        if: always()
         run: |
-          sudo rm -rf work_dir
+          sudo rm -rf work_dir temp_backup
 
       - name: 6. GitHub Üzerinde Yedekle (Artifact)
         if: success()
