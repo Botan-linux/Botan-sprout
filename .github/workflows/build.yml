@@ -1,43 +1,65 @@
-name: Botan ISO Builder
+name: Botan ISO Builder - Sprout v1.0
 on:
-  workflow_dispatch:
+  workflow_dispatch: # Manuel başlatma butonu
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
+      - name: 1. Kodu Çek
         uses: actions/checkout@v4
 
-      - name: Free Disk Space
+      - name: 2. Maksimum Disk Temizliği
         run: |
-          sudo rm -rf /usr/share/dotnet
-          sudo rm -rf /opt/ghc
-          sudo rm -rf "/usr/local/share/boost"
-          sudo docker image prune -af 
+          # Gereksiz servisleri silerek yaklaşık 20GB+ yer açıyoruz
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /usr/local/share/boost /usr/lib/jvm
+          sudo docker image prune -af
+          sudo docker system prune -af
 
-      - name: Build ISO
+      - name: 3. Çalışma Alanını Hazırla
         run: |
+          sudo rm -rf work_dir out_dir
           mkdir -p $(pwd)/work_dir
           mkdir -p $(pwd)/out_dir
-          # .gitkeep dosyalarını temizle (ISO içinde gözükmesinler)
+          # ISO içine girmemesi gereken .gitkeep dosyalarını temizle
           find airootfs/ -name ".gitkeep" -delete || true
-          
-          # Docker içinde derlemeyi başlat
+          # Dosya izinlerini derleme için güvenli hale getir
+          sudo chmod -R 755 .
+
+      - name: 4. ISO Derleme (Docker İçinde)
+        run: |
           docker run --privileged --rm \
             -v $(pwd):/iso \
             -v $(pwd)/work_dir:/work \
             -v $(pwd)/out_dir:/output \
             archlinux:latest /bin/bash -c "
-              # Gerekli araçları kur (grub, mtools, libisoburn ve dosfstools şart)
-              pacman -Syu --noconfirm archiso grub mtools libisoburn dosfstools &&
-              pacman -Scc --noconfirm && 
-              # ISO Derleme komutu
+              # A. Keyring ve Anahtarları Hazırla (PGP Hatalarını Çözer)
+              pacman-key --init
+              pacman-key --populate archlinux
+              # EndeavourOS (Manuel) anahtarını ekle ve güven ver
+              pacman-key --recv-keys A367FB01AE54040E
+              pacman-key --lsign-key A367FB01AE54040E
+              
+              # B. Derleme Araçlarını Kur
+              pacman -Syu --noconfirm archiso grub mtools libisoburn dosfstools
+              
+              # C. Paket Önbelleğini Boşalt (Yer Aç)
+              pacman -Scc --noconfirm
+              
+              # D. Derlemeyi Başlat
               mkarchiso -v -w /work -o /output /iso
+              
+              # E. Derleme Sonrası İçi Temizle (Output hariç)
+              rm -rf /work/*
             "
 
-      - name: Upload to Transfer
+      - name: 5. ISO'yu Buluta Yükle
         run: |
-          ISO_PATH=$(ls out_dir/*.iso)
-          echo "Uploading $ISO_PATH to Transfer.sh..."
-          curl --upload-file "$ISO_PATH" https://transfer.sh/botan-sprout-1.0-x86_64.iso
+          ISO_NAME=$(ls out_dir/*.iso | head -n 1)
+          if [ -z "$ISO_NAME" ]; then
+            echo "Hata: ISO dosyası bulunamadı! Logları kontrol edin."
+            exit 1
+          fi
+          echo "ISO Bulundu: $ISO_NAME"
+          # Transfer.sh'ye gönder
+          curl --upload-file "$ISO_NAME" https://transfer.sh/botan-sprout-1.0-x86_64.iso
