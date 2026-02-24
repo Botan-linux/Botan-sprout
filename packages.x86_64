@@ -17,11 +17,17 @@ konsole
 dolphin
 firefox
 ark
-packagekit-qt6
 xdg-utils
 xdg-user-dirs
 polkit-kde-agent
-# --- AĞ VE BAĞLANTI (İnternet Ayarları İçin Şart) ---
+
+# --- 🛍️ BOTAN APP STORE (Mağaza ve Uygulama Desteği) ---
+discover
+packagekit-qt6
+flatpak
+fwupd
+
+# --- AĞ VE BAĞLANTI ---
 networkmanager
 network-manager-applet
 wireless-regdb
@@ -29,7 +35,6 @@ wireless_tools
 wpa_supplicant
 iwd
 dhcpcd
-modemmanager
 bluez
 bluez-utils
 
@@ -42,16 +47,14 @@ dosfstools
 ntfs-3g
 btrfs-progs
 xfsprogs
-f2fs-tools
 exfatprogs
 
-# --- DONANIM DESTEĞİ (Mikro Kodlar) ---
+# --- DONANIM DESTEĞİ ---
 intel-ucode
 amd-ucode
 alsa-utils
 mesa
 vulkan-intel
-lib32-vulkan-intel
 
 # --- TERMİNAL & KABUK (Botan Özel) ---
 fish
@@ -60,92 +63,14 @@ vim
 git
 wget
 curl
-rsync
 htop
 fastfetch
 
 # --- KURULUM YARDIMCILARI ---
 arch-install-scripts
-archinstall
 parted
-gpart
 gptfdisk
 
-# --- TERMİNOFİLLER VE DİĞER (Senin Listenden Gelenler) ---
-ckbcomp
-hwinfo
-qt5-xmlpatterns
-qt5-svg
-kpmcore
-bind
-bolt
-brltty
-broadcom-wl
-clonezilla
-cryptsetup
-darkhttpd
-ddrescue
-dmidecode
-dnsmasq
-edk2-shell
-espeakup
-ethtool
-fsarchiver
-gpm
-irssi
-jfsutils
-ldns
-less
-lftp
-libfido2
-lvm2
-lynx
-man-db
-man-pages
-mc
-mdadm
-memtest86+
-memtest86+-efi
-mmc-utils
-nbd
-ndisc6
-nfs-utils
-nilfs-utils
-nmap
-nvme-cli
-open-iscsi
-open-vm-tools
-openconnect
-openpgp-card-tools
-openssh
-openvpn
-partclone
-partimage
-pcsclite
-ppp
-pptpclient
-pv
-qemu-guest-agent
-reflector
-screen
-sdparm
-smartmontools
-squashfs-tools
-syslinux
-systemd-resolvconf
-tcpdump
-terminus-font
-testdisk
-tmux
-tpm2-tools
-udftools
-usb_modeswitch
-usbmuxd
-usbutils
-virtualbox-guest-utils-nox
-vpnc
-wvdial
-xl2tpd
 # --- BOTAN LINUX INSTALLER (Calamares) ---
 calamares
 yaml-cpp
@@ -155,3 +80,8 @@ polkit-qt6
 python
 boost-libs
 icu
+
+# --- GEREKLİ DİĞER ARAÇLAR ---
+lsb-release
+reflector
+sudo
