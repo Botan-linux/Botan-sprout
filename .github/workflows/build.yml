@@ -11,19 +11,19 @@ jobs:
 
       - name: 2. Maksimum Disk Temizliği
         run: |
-          # Gereksiz servisleri silerek yaklaşık 20GB+ yer açıyoruz
+          # GitHub sunucusunda yer açıyoruz
           sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /usr/local/share/boost /usr/lib/jvm
           sudo docker image prune -af
           sudo docker system prune -af
 
-      - name: 3. Çalışma Alanını Hazırla
+      - name: 3. Çalışma Alanını Hazırla (Kesin Temizlik)
         run: |
+          # En başta eski kalıntıları siliyoruz (Senin uyardığın nokta)
           sudo rm -rf work_dir out_dir
           mkdir -p $(pwd)/work_dir
           mkdir -p $(pwd)/out_dir
-          # ISO içine girmemesi gereken .gitkeep dosyalarını temizle
+          # .gitkeep temizliği ve izinler
           find airootfs/ -name ".gitkeep" -delete || true
-          # Dosya izinlerini derleme için güvenli hale getir
           sudo chmod -R 755 .
 
       - name: 4. ISO Derleme (Docker İçinde)
@@ -36,24 +36,27 @@ jobs:
               # A. Keyring ve Anahtarları Hazırla
               pacman-key --init
               pacman-key --populate archlinux
-              # EndeavourOS anahtarını ekle
               pacman-key --recv-keys A367FB01AE54040E
               pacman-key --lsign-key A367FB01AE54040E
               
-              # B. Derleme Araçlarını Kur
+              # B. Araçları Kur
               pacman -Syu --noconfirm archiso grub mtools libisoburn dosfstools
               
-              # C. Paket Önbelleğini Boşalt
+              # C. Önbelleği Temizle
               pacman -Scc --noconfirm
               
               # D. Derlemeyi Başlat
               mkarchiso -v -w /work -o /output /iso
-              
-              # E. Derleme Sonrası Temizlik
-              rm -rf /work/*
             "
 
-      - name: 5. GitHub Üzerinde Yedekle (Artifact)
+      - name: 5. Final Temizliği (Work Sil)
+        if: always() # Hata olsa bile çalışır, sunucu temiz kalsın
+        run: |
+          # Derleme bitti, alanı temizliyoruz
+          sudo rm -rf work_dir
+
+      - name: 6. GitHub Üzerinde Yedekle (Artifact)
+        if: success() # Sadece derleme başarılıysa ISO'yu yükle
         uses: actions/upload-artifact@v4
         with:
           name: Botan-Sprout-ISO
