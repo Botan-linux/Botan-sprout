@@ -53,7 +53,7 @@ jobs:
               rm -rf /work/*
             "
 
-      - name: 5. ISO'yu Buluta Yükle
+      - name: 5. BashUpload'a Gönder
         run: |
           ISO_NAME=$(ls out_dir/*.iso | head -n 1)
           if [ -z "$ISO_NAME" ]; then
@@ -61,5 +61,13 @@ jobs:
             exit 1
           fi
           echo "ISO Bulundu: $ISO_NAME"
-          # Transfer.sh'ye gönder
-          curl --upload-file "$ISO_NAME" https://transfer.sh/botan-sprout-1.0-x86_64.iso
+          echo "BashUpload'a yükleniyor..."
+          # BashUpload'a yükle ve linki ekrana yazdır
+          curl https://bashupload.com/ -T "$ISO_NAME"
+
+      - name: 6. GitHub Üzerinde Yedekle (Artifact)
+        uses: actions/upload-artifact@v4
+        with:
+          name: Botan-Sprout-ISO
+          path: out_dir/*.iso
+          retention-days: 5
