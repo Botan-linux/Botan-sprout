@@ -33,39 +33,27 @@ jobs:
             -v $(pwd)/work_dir:/work \
             -v $(pwd)/out_dir:/output \
             archlinux:latest /bin/bash -c "
-              # A. Keyring ve Anahtarları Hazırla (PGP Hatalarını Çözer)
+              # A. Keyring ve Anahtarları Hazırla
               pacman-key --init
               pacman-key --populate archlinux
-              # EndeavourOS (Manuel) anahtarını ekle ve güven ver
+              # EndeavourOS anahtarını ekle
               pacman-key --recv-keys A367FB01AE54040E
               pacman-key --lsign-key A367FB01AE54040E
               
               # B. Derleme Araçlarını Kur
               pacman -Syu --noconfirm archiso grub mtools libisoburn dosfstools
               
-              # C. Paket Önbelleğini Boşalt (Yer Aç)
+              # C. Paket Önbelleğini Boşalt
               pacman -Scc --noconfirm
               
               # D. Derlemeyi Başlat
               mkarchiso -v -w /work -o /output /iso
               
-              # E. Derleme Sonrası İçi Temizle (Output hariç)
+              # E. Derleme Sonrası Temizlik
               rm -rf /work/*
             "
 
-      - name: 5. BashUpload'a Gönder
-        run: |
-          ISO_NAME=$(ls out_dir/*.iso | head -n 1)
-          if [ -z "$ISO_NAME" ]; then
-            echo "Hata: ISO dosyası bulunamadı! Logları kontrol edin."
-            exit 1
-          fi
-          echo "ISO Bulundu: $ISO_NAME"
-          echo "BashUpload'a yükleniyor..."
-          # BashUpload'a yükle ve linki ekrana yazdır
-          curl https://bashupload.com/ -T "$ISO_NAME"
-
-      - name: 6. GitHub Üzerinde Yedekle (Artifact)
+      - name: 5. GitHub Üzerinde Yedekle (Artifact)
         uses: actions/upload-artifact@v4
         with:
           name: Botan-Sprout-ISO
