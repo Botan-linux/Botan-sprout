@@ -35,7 +35,6 @@ jobs:
               
               pacman -Syu --noconfirm archiso grub mtools libisoburn dosfstools
               
-              # Derleme Başlıyor - Dosya çakışması riski bitti!
               mkarchiso -v -w /work -o /output /iso
             "
 
