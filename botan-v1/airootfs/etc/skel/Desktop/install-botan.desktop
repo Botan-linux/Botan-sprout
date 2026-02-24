@@ -1,0 +1,19 @@
+[Desktop Entry]
+
+Type=Application
+
+Name=Botan Linux'u Kur
+
+Comment=Sistemi bilgisayarınıza kurun
+
+# Grafik hatalarını önlemek için QT_QUICK_BACKEND ekledik
+
+Exec=sudo QT_QUICK_BACKEND=software calamares -d
+
+Icon=system-software-install
+
+Terminal=false
+
+Categories=System;
+
+StartupNotify=true

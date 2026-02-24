@@ -1,0 +1,11 @@
+[Unit]
+Description=Botan Linux İlk Yapılandırma Servisi
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/botan-first-boot.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
