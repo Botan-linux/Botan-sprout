@@ -1,0 +1,8 @@
+- name: "Masaüstü Seç"
+  description: "Hangi masaüstünü istersin?"
+  critical: true
+  groups:
+    - name: "KDE Plasma"
+      packages: [plasma-desktop, dolphin, konsole, sddm]
+    - name: "GNOME"
+      packages: [gnome-shell, nautilus, gnome-terminal, gdm]
