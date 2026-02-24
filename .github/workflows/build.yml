@@ -18,7 +18,7 @@ jobs:
 
       - name: 3. Çalışma Alanını Hazırla (Kesin Temizlik)
         run: |
-          # En başta eski kalıntıları siliyoruz (Senin uyardığın nokta)
+          # Başlarken her şeyi süpür (Senin uyardığın kritik nokta)
           sudo rm -rf work_dir out_dir
           mkdir -p $(pwd)/work_dir
           mkdir -p $(pwd)/out_dir
@@ -39,24 +39,25 @@ jobs:
               pacman-key --recv-keys A367FB01AE54040E
               pacman-key --lsign-key A367FB01AE54040E
               
-              # B. Araçları Kur
-              pacman -Syu --noconfirm archiso grub mtools libisoburn dosfstools
+              # B. Araçları Kur (ÇAKIŞMAYI ÖNLEYEN --overwrite eklendi)
+              pacman -Syu --noconfirm --overwrite '*' archiso grub mtools libisoburn dosfstools
               
               # C. Önbelleği Temizle
               pacman -Scc --noconfirm
               
-              # D. Derlemeyi Başlat
+              # D. Derlemeyi Başlat (Calamares çakışmasını engellemek için mkarchiso'yu yamalıyoruz)
+              sed -i 's/pacman_options=(/pacman_options=(--overwrite \"*\" /' /usr/bin/mkarchiso
+              
               mkarchiso -v -w /work -o /output /iso
             "
 
       - name: 5. Final Temizliği (Work Sil)
-        if: always() # Hata olsa bile çalışır, sunucu temiz kalsın
+        if: always() # Hata alsa da almasa da mutfağı temizle
         run: |
-          # Derleme bitti, alanı temizliyoruz
           sudo rm -rf work_dir
 
       - name: 6. GitHub Üzerinde Yedekle (Artifact)
-        if: success() # Sadece derleme başarılıysa ISO'yu yükle
+        if: success() # Sadece ISO başarıyla oluştuysa yükle
         uses: actions/upload-artifact@v4
         with:
           name: Botan-Sprout-ISO
