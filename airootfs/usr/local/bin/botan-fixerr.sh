@@ -8,3 +8,6 @@ if [ -f /root/netinstall.conf.yedek ]; then
     cp /root/netinstall.conf.yedek /etc/calamares/modules/netinstall.conf
     chmod 644 /etc/calamares/modules/netinstall.conf
 fi
+
+
+(sudo pacman -Sy --noconfirm) &
