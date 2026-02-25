@@ -1,9 +1,0 @@
----
-# Botan Linux - Çevrimiçi Paket Kurulum Yapılandırması
-groupsUrl: "https://raw.githubusercontent.com/Botan-linux/botan-slo/main/groups.yaml"
-required: true
-
-label:
-    sidebar: "Sürüm Seçimi"
-    title: "Botan Linux Fidanınızı Seçin"
-    description: "Lütfen sisteminize kurulacak olan masaüstü ortamını (Botan fidanını) seçin. Bu işlem aktif bir internet bağlantısı gerektirir."
