@@ -21,19 +21,7 @@ jobs:
           find airootfs/ -name ".gitkeep" -delete || true
           sudo chmod -R 755 .
 
-      - name: 4. Netinstall Fixer Hazırla (Yeni Adım)
-        run: |
-          # Klasörleri oluştur
-          mkdir -p airootfs/etc/systemd/system/multi-user.target.wants/
-          
-          # Sembolik linki (servis aktivasyonu) oluştur
-          # Not: Link hedefi ISO içindeki mutlak yol olmalıdır (/etc/...)
-          ln -sf /etc/systemd/system/botan-setup.service airootfs/etc/systemd/system/multi-user.target.wants/botan-setup.service
-          
-          # Script'e çalıştırma yetkisi ver
-          chmod +x airootfs/usr/local/bin/botan-fixerr.sh
-
-      - name: 5. ISO Derleme (Docker İçinde)
+      - name: 4. ISO Derleme (Docker İçinde)
         run: |
           docker run --privileged --rm \
             -v $(pwd):/iso \
@@ -50,11 +38,11 @@ jobs:
               mkarchiso -v -w /work -o /output /iso
             "
 
-      - name: 6. Final Temizliği
+      - name: 5. Final Temizliği
         if: always()
         run: sudo rm -rf work_dir
 
-      - name: 7. GitHub Üzerinde Yedekle (Artifact)
+      - name: 6. GitHub Üzerinde Yedekle (Artifact)
         if: success()
         uses: actions/upload-artifact@v4
         with:
