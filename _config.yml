@@ -1,0 +1,11 @@
+title: Botan Linux
+description: Gelecek Botan ile Büyüyecek
+theme: jekyll-theme-primer
+
+# Jekyll'in hata veren klasöre bakmasını engellemek için:
+exclude:
+  - airootfs
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+  - .github
