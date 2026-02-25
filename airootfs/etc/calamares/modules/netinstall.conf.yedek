@@ -1,6 +1,0 @@
----
-groupsUrl: "https://raw.githubusercontent.com/Botan-linux/botan-slo/main/groups.yaml"
-required: true
-label:
-    sidebar: "Sürüm Seçimi"
-    title: "Botan Linux Fidanınızı Seçin"
