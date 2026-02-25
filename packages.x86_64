@@ -26,7 +26,6 @@ polkit-kde-agent
 
 # --- 🛍️ BOTAN APP STORE (Mağaza ve Uygulama Desteği) ---
 discover
-packagekit-qt6
 flatpak
 fwupd
 
