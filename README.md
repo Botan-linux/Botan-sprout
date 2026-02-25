@@ -43,3 +43,29 @@ Kendi özelleştirilmiş Botan ISO'nuzu oluşturmak için:
 1. **Gerekli paketleri kurun:**
    ```bash
    sudo pacman -S archiso
+---
+
+## 🛠️ Gelecek Planları ve Geliştirme Süreci
+
+> **📢 Önemli Not:** Önümüzdeki 1 ay boyunca aktif olarak ISO kalıpları üzerinde çalışacağım ve Botan Linux'u daha stabil hale getireceğim. Bu süreçte odak noktam:
+> - **Botan-Repo:** Paket depolarımızı geliştirmek ve optimize etmek.
+> - **Performans:** ISO boyutunu ve sistem kaynak tüketimini daha da aşağı çekmek.
+> - **Masaüstü Ortamı:** Mevcut sürümde (**Sprout**), **KDE Plasma** varsayılan ve tek masaüstü ortamı (DE) olarak sunulacaktır. Sadeliği korumak adına şu an için bu yapı üzerinden devam ediyoruz.
+
+Biraz rahatlayıp projeyi güçlendirdikten sonra, Botan'ı daha ileriye taşımak için profesyonel bir **geliştirici ekibi** kurmak istiyorum.
+
+---
+
+## 🤝 Ekibimize Katılın!
+
+Botan Linux'un geleceğini birlikte inşa edebiliriz! Eğer siz de geliştirici ekibine katılmak, kod katkısında bulunmak veya projeye destek olmak isterseniz Discord sunucumuza bekliyoruz:
+
+👉 **[Botan Linux Discord Sunucusu](https://discord.gg/zB4NYTFj)**
+
+---
+
+<p align="center">
+  <i>"Botanı daha iyi bir yere taşımak için çalışmaya devam ediyoruz."</i>
+</p>
+
+   
