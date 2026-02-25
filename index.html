@@ -3,10 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Botan Linux | Gelecek Botan ile Büyüyecek</title>
+    <meta name="description" content="Arch Linux tabanlı, modern ve hafif Linux dağıtımı">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
+    
+    <script>
+        const SITE_CONFIG = {
+            // Genel Bilgiler
+            siteName: "Botan Linux",
+            slogan: "Gelecek Botan ile Büyüyecek",
+            
+            // Versiyon Bilgileri
+            version: "Sprout v1.0",
+            versionBadge: "Sprout v1.0 Yayında",
+            releaseDate: "25 Şubat 2026",
+            commitCount: "67 Commit",
+            
+            // Hero Bölümü
+            hero: {
+                title: "Gelecek Botan ile Büyüyecek",
+                subtitle: "Arch Linux tabanlı, modern ve hafif",
+                description: "Sadeliği ve estetiği modern mimariyle harmanlayan Botan Linux, verimlilik ve güzelliği bir araya getiriyor. Akıllı terminal, özelleştirilebilir masaüstü ve sezgisel kurulum deneyimi.",
+                ctaPrimary: "Hemen İndir",
+                ctaSecondary: "Kaynak Kodu",
+                githubUrl: "https://github.com/botan-linux"
+            },
+            
+            // Özellikler
+            features: [
+                { icon: "🚀", title: "Hafif Mimari", description: "Modern sistem kaynaklarını verimli kullanan optimize yapı. Eski donanımlarda bile akıcı performans." },
+                { icon: "🐚", title: "Fish Shell", description: "Akıllı otomatik tamamlama ve renkli terminal arayüzü ile komut satırı deneyimini yeniden tanımlıyor." },
+                { icon: "🎨", title: "KDE Plasma", description: "Minimalist ve özelleştirilebilir masaüstü deneyimi. Estetik ve işlevselliğin mükemmel dengesi." },
+                { icon: "🛠️", title: "Calamares", description: "Botan temalı grafiksel kurulumcu ile kolay ve hızlı kurulum. Birkaç tıklamada hazır." },
+                { icon: "🛡️", title: "LTS Kernel", description: "Uzun süreli destek sunan kararlı çekirdek. Güvenlik ve stabilite öncelikli." },
+                { icon: "📦", title: "Botan App Store", description: "Discover + Flatpak entegrasyonu ile binlerce uygulamaya anında erişim." }
+            ],
+
+            // YENİ: Topluluk Bölümü Ayarları
+            community: {
+                title: "Topluluğumuza Katılın",
+                subtitle: "Açık kaynak ekosisteminde birlikte büyüyoruz",
+                stats: [
+                    { value: "1", label: "Aktif Kullanıcı" },
+                    { value: "1", label: "Geliştirici" },
+                    { value: "0+", label: "Forum Mesajı" }
+                ],
+                discordText: "Discord'a Katıl",
+                discordUrl: "#"
+            },
+
+            // YENİ: Sıkça Sorulan Sorular (SSS)
+            faq: {
+                title: "Sıkça Sorulan Sorular",
+                subtitle: "Botan Linux hakkında merak edilenler",
+                items: [
+                    { 
+                        q: "Botan Linux ücretsiz mi?", 
+                        a: "Evet, Botan Linux tamamen ücretsizdir ve GPL-3.0 lisansı ile açık kaynak kodlu olarak geliştirilmektedir." 
+                    },
+                    { 
+                        q: "Paket yöneticisi olarak ne kullanıyor?", 
+                        a: "Arch tabanlı olduğu için temel olarak 'pacman' kullanır. Ayrıca AUR paketleri için varsayılan olarak destek sunar." 
+                    },
+                    { 
+                        q: "Botan Linux'un kendi depoları var mı?", 
+                        a: "Evet! Standart Arch depolarına ek olarak, Botan'a özel optimize edilmiş paketlerin bulunduğu kendi ana depomuz (repository) ve eski sürümler için bir arşiv depomuz bulunmaktadır." 
+                    },
+                    { 
+                        q: "Hangi masaüstü ortamını kullanıyor?", 
+                        a: "Varsayılan olarak son derece özelleştirilmiş ve hafifletilmiş KDE Plasma ile birlikte gelir." 
+                    }
+                ]
+            },
+            
+            // İndirme Bilgileri
+            download: {
+                sectionTitle: "Sprout v1.0",
+                sectionSubtitle: "En son kararlı sürüm",
+                filename: "botan-sprout-v1.0-x86_64.iso",
+                fileSize: "~2.1 GB",
+                architecture: "x86_64",
+                downloadUrl: "https://drive.google.com/file/d/EXAMPLE/view?usp=sharing",
+                sha256: "a1b2c3d4e5f6789abcdef0123456789abcdef0123456789abcdef0123456789ab",
+                mirrorText: "Google Drive"
+            },
+            
+            // Footer
+            footerNote: "💡 Not: Bu sürüm deneysel özellikler içermektedir. Üretim ortamında kullanmadan önce yedek almanız önerilir.",
+            social: {
+                github: "https://github.com/botan-linux",
+                twitter: "#",
+                discord: "#",
+                telegram: "#"
+            },
+            footer: {
+                copyright: "© 2026 Botan Linux. GPL-3.0 ile lisanslanmıştır.",
+                links: [
+                    { text: "Gizlilik Politikası", url: "#" },
+                    { text: "Katkıda Bulun", url: "#" },
+                    { text: "Belgeler", url: "#" },
+                    { text: "İletişim", url: "#" }
+                ]
+            },
+            
+            // Tema Renkleri
+            colors: {
+                primary: "#2D5A3D",
+                primaryLight: "#4A8B5C",
+                accent: "#7CB342",
+                bgDark: "#0A0F0C",
+                bgCard: "#111A14",
+                textPrimary: "#E8F5E9",
+                textSecondary: "#A5D6A7"
+            }
+        };
+    </script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --primary: #2D5A3D;
@@ -19,717 +136,146 @@
             --text-secondary: #A5D6A7;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background: var(--bg-dark);
             color: var(--text-primary);
             line-height: 1.6;
             overflow-x: hidden;
         }
 
-        h1, h2, h3, h4 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 600;
-        }
+        h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; font-weight: 600; }
 
-        /* Animated Background */
+        /* Arkaplan Animasyonu */
         .bg-animation {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
             background: 
                 radial-gradient(ellipse at 20% 80%, rgba(45, 90, 61, 0.15) 0%, transparent 50%),
                 radial-gradient(ellipse at 80% 20%, rgba(124, 179, 66, 0.1) 0%, transparent 50%),
                 radial-gradient(ellipse at 50% 50%, rgba(27, 94, 32, 0.05) 0%, transparent 70%);
             animation: bgPulse 8s ease-in-out infinite;
         }
+        @keyframes bgPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.8; } }
 
-        @keyframes bgPulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
-        }
+        /* Geliştirilmiş Animasyonlar */
+        .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .scale-in { opacity: 0; transform: scale(0.95); transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+        .scale-in.visible { opacity: 1; transform: scale(1); }
 
-        /* Navigation */
+        /* Navigasyon (Mobil Uyumluluk Artırıldı) */
         nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 1.5rem 5%;
-            background: rgba(10, 15, 12, 0.8);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(124, 179, 66, 0.1);
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            position: fixed; top: 0; width: 100%; padding: 1.5rem 5%;
+            background: rgba(10, 15, 12, 0.8); backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(124, 179, 66, 0.1); z-index: 1000;
+            display: flex; justify-content: space-between; align-items: center;
             transition: all 0.3s ease;
         }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            text-decoration: none;
-        }
-
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, var(--primary-light), var(--accent));
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .logo-icon::before {
-            content: "🌱";
-            font-size: 1.25rem;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            position: relative;
-            transition: color 0.3s ease;
-            cursor: pointer;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--text-primary);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .admin-indicator {
-            background: var(--accent);
-            color: var(--bg-dark);
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            display: none;
-        }
-
-        .admin-indicator.active {
-            display: inline-block;
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 8rem 5% 4rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-content {
-            text-align: center;
-            max-width: 900px;
-            z-index: 1;
-        }
-
-        .version-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1.25rem;
-            background: rgba(124, 179, 66, 0.1);
-            border: 1px solid rgba(124, 179, 66, 0.3);
-            border-radius: 50px;
-            font-size: 0.875rem;
-            color: var(--accent);
-            margin-bottom: 2rem;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-        }
-
-        .hero h1 {
-            font-size: clamp(3rem, 8vw, 5rem);
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, #fff 0%, var(--accent) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-subtitle {
-            font-size: 1.5rem;
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-            font-weight: 300;
-        }
-
-        .hero-description {
-            font-size: 1.125rem;
-            color: rgba(165, 214, 167, 0.8);
-            max-width: 600px;
-            margin: 0 auto 3rem;
-            line-height: 1.8;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 1rem 2.5rem;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 1rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            position: relative;
-            overflow: hidden;
-            border: none;
-            cursor: pointer;
-            font-family: inherit;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary-light), var(--primary));
-            color: white;
-            box-shadow: 0 4px 20px rgba(45, 90, 61, 0.4);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(45, 90, 61, 0.6);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--text-primary);
-            border: 1px solid rgba(124, 179, 66, 0.4);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(124, 179, 66, 0.1);
-            border-color: var(--accent);
-        }
-
-        .btn-danger {
-            background: linear-gradient(135deg, #c62828, #b71c1c);
-            color: white;
-        }
-
-        /* Features Grid */
-        .features {
-            padding: 6rem 5%;
-            background: linear-gradient(to bottom, transparent, rgba(17, 26, 20, 0.5));
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-
-        .section-header p {
-            color: var(--text-secondary);
-            font-size: 1.125rem;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .feature-card {
-            background: var(--bg-card);
-            border: 1px solid rgba(124, 179, 66, 0.1);
-            border-radius: 20px;
-            padding: 2.5rem;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary-light), var(--accent));
-            transform: scaleX(0);
-            transition: transform 0.4s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(124, 179, 66, 0.3);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .feature-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, rgba(45, 90, 61, 0.2), rgba(124, 179, 66, 0.1));
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.75rem;
-            margin-bottom: 1.5rem;
-            border: 1px solid rgba(124, 179, 66, 0.2);
-        }
-
-        .feature-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.75rem;
-            color: var(--text-primary);
-        }
-
-        .feature-card p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-
-        /* Download Section */
-        .download {
-            padding: 6rem 5%;
-            text-align: center;
-            position: relative;
-        }
-
-        .download-card {
-            max-width: 800px;
-            margin: 0 auto;
-            background: linear-gradient(135deg, rgba(45, 90, 61, 0.1), rgba(17, 26, 20, 0.8));
-            border: 1px solid rgba(124, 179, 66, 0.2);
-            border-radius: 24px;
-            padding: 3rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .download-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(124, 179, 66, 0.1) 0%, transparent 70%);
-            animation: rotate 20s linear infinite;
-        }
-
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .download-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .filename {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            word-break: break-all;
-        }
-
-        .file-meta {
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
-        }
-
-        .hash-box {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 1rem;
-            border-radius: 8px;
-            font-family: 'Courier New', monospace;
-            font-size: 0.875rem;
-            color: var(--accent);
-            margin: 1.5rem 0;
-            border: 1px solid rgba(124, 179, 66, 0.2);
-            word-break: break-all;
-            position: relative;
-        }
-
-        .hash-label {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 0.5rem;
-            opacity: 0.8;
-        }
-
-        .download-meta {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .meta-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--text-secondary);
-            font-size: 0.875rem;
-        }
-
-        /* Admin Panel Modal */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
-            z-index: 2000;
-            display: none;
-            justify-content: center;
-            align-items: center;
-            padding: 2rem;
-        }
-
-        .modal-overlay.active {
-            display: flex;
-        }
-
-        .modal {
-            background: var(--bg-card);
-            border: 1px solid rgba(124, 179, 66, 0.3);
-            border-radius: 20px;
-            padding: 2.5rem;
-            max-width: 600px;
-            width: 100%;
-            max-height: 90vh;
-            overflow-y: auto;
-            position: relative;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
-        }
-
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid rgba(124, 179, 66, 0.2);
-        }
-
-        .modal-title {
-            font-size: 1.5rem;
-            color: var(--accent);
-        }
-
-        .close-btn {
-            background: none;
-            border: none;
-            color: var(--text-secondary);
-            font-size: 1.5rem;
-            cursor: pointer;
-            padding: 0.5rem;
-            line-height: 1;
-            transition: color 0.3s;
-        }
-
-        .close-btn:hover {
-            color: var(--text-primary);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--text-secondary);
-            font-size: 0.875rem;
-            font-weight: 500;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.875rem 1rem;
-            background: rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(124, 179, 66, 0.2);
-            border-radius: 8px;
-            color: var(--text-primary);
-            font-family: inherit;
-            font-size: 0.95rem;
-            transition: all 0.3s;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(124, 179, 66, 0.1);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
-
-        @media (max-width: 600px) {
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .save-btn {
-            width: 100%;
-            margin-top: 1rem;
-        }
-
-        .edit-hint {
-            background: rgba(124, 179, 66, 0.1);
-            border: 1px solid rgba(124, 179, 66, 0.2);
-            border-radius: 8px;
-            padding: 1rem;
-            margin-bottom: 1.5rem;
-            font-size: 0.875rem;
-            color: var(--text-secondary);
-        }
-
-        .edit-hint code {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 0.2rem 0.4rem;
-            border-radius: 4px;
-            color: var(--accent);
-        }
-
-        /* Footer Note */
-        .footer-note {
-            background: rgba(124, 179, 66, 0.05);
-            border-top: 1px solid rgba(124, 179, 66, 0.1);
-            padding: 2rem 5%;
-            text-align: center;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            font-style: italic;
-        }
+        .logo { display: flex; align-items: center; gap: 0.75rem; font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--text-primary); text-decoration: none; }
+        .logo-icon { width: 40px; height: 40px; background: linear-gradient(135deg, var(--primary-light), var(--accent)); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; font-weight: 500; font-size: 0.95rem; position: relative; transition: color 0.3s ease; cursor: pointer; }
+        .nav-links a::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background: var(--accent); transition: width 0.3s ease; }
+        .nav-links a:hover { color: var(--text-primary); }
+        .nav-links a:hover::after { width: 100%; }
+
+        /* Butonlar - Gelişmiş Hover Animasyonları */
+        .btn { padding: 1rem 2.5rem; border-radius: 12px; font-weight: 600; font-size: 1rem; text-decoration: none; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); display: inline-flex; align-items: center; gap: 0.5rem; border: none; cursor: pointer; font-family: inherit; position: relative; overflow: hidden; }
+        .btn-primary { background: linear-gradient(135deg, var(--primary-light), var(--primary)); color: white; box-shadow: 0 4px 20px rgba(45, 90, 61, 0.4); z-index: 1; }
+        .btn-primary::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, var(--accent), var(--primary-light)); z-index: -1; transition: opacity 0.4s ease; opacity: 0; }
+        .btn-primary:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 10px 30px rgba(124, 179, 66, 0.4); }
+        .btn-primary:hover::before { opacity: 1; }
+        .btn-secondary { background: transparent; color: var(--text-primary); border: 1px solid rgba(124, 179, 66, 0.4); }
+        .btn-secondary:hover { background: rgba(124, 179, 66, 0.1); border-color: var(--accent); transform: translateY(-2px); }
+
+        /* Hero */
+        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 8rem 5% 4rem; position: relative; }
+        .hero-content { text-align: center; max-width: 900px; z-index: 1; }
+        .version-badge { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1.25rem; background: rgba(124, 179, 66, 0.1); border: 1px solid rgba(124, 179, 66, 0.3); border-radius: 50px; font-size: 0.875rem; color: var(--accent); margin-bottom: 2rem; animation: float 3s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+        .hero h1 { font-size: clamp(2.5rem, 8vw, 5rem); line-height: 1.1; margin-bottom: 1.5rem; background: linear-gradient(135deg, #fff 0%, var(--accent) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-subtitle { font-size: clamp(1.2rem, 3vw, 1.5rem); color: var(--text-secondary); margin-bottom: 1rem; font-weight: 300; }
+        .hero-description { font-size: clamp(1rem, 2vw, 1.125rem); color: rgba(165, 214, 167, 0.8); max-width: 600px; margin: 0 auto 3rem; line-height: 1.8; }
+        .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+        /* Ortak Başlıklar */
+        .section-header { text-align: center; margin-bottom: 4rem; padding: 0 1rem; }
+        .section-header h2 { font-size: clamp(2rem, 5vw, 2.5rem); margin-bottom: 1rem; color: var(--text-primary); }
+        .section-header p { color: var(--text-secondary); font-size: clamp(1rem, 2vw, 1.125rem); }
+
+        /* Özellikler */
+        .features { padding: 6rem 5%; background: linear-gradient(to bottom, transparent, rgba(17, 26, 20, 0.5)); }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
+        .feature-card { background: var(--bg-card); border: 1px solid rgba(124, 179, 66, 0.1); border-radius: 20px; padding: 2.5rem; transition: all 0.4s ease; position: relative; overflow: hidden; }
+        .feature-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--primary-light), var(--accent)); transform: scaleX(0); transition: transform 0.4s ease; transform-origin: left; }
+        .feature-card:hover { transform: translateY(-8px); border-color: rgba(124, 179, 66, 0.3); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); }
+        .feature-card:hover::before { transform: scaleX(1); }
+        .feature-icon { width: 60px; height: 60px; background: linear-gradient(135deg, rgba(45, 90, 61, 0.2), rgba(124, 179, 66, 0.1)); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.75rem; margin-bottom: 1.5rem; border: 1px solid rgba(124, 179, 66, 0.2); transition: transform 0.3s ease; }
+        .feature-card:hover .feature-icon { transform: scale(1.1) rotate(5deg); }
+        .feature-card h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: var(--text-primary); }
+        .feature-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+
+        /* YENİ: Topluluk Bölümü */
+        .community { padding: 6rem 5%; position: relative; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; max-width: 900px; margin: 0 auto 3rem; }
+        .stat-card { background: rgba(124, 179, 66, 0.05); border: 1px solid rgba(124, 179, 66, 0.15); border-radius: 16px; padding: 2rem; text-align: center; transition: all 0.3s ease; }
+        .stat-card:hover { background: rgba(124, 179, 66, 0.1); transform: translateY(-5px); border-color: var(--accent); }
+        .stat-value { font-size: 2.5rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem; font-family: 'Space Grotesk', sans-serif; }
+        .stat-label { color: var(--text-secondary); font-size: 1rem; }
+        .community-cta { text-align: center; }
+
+        /* YENİ: SSS Bölümü (Accordion) */
+        .faq { padding: 6rem 5%; background: var(--bg-card); border-top: 1px solid rgba(124, 179, 66, 0.1); border-bottom: 1px solid rgba(124, 179, 66, 0.1); }
+        .faq-container { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; }
+        .faq-item { background: var(--bg-dark); border: 1px solid rgba(124, 179, 66, 0.2); border-radius: 12px; overflow: hidden; transition: all 0.3s ease; }
+        .faq-item:hover { border-color: rgba(124, 179, 66, 0.5); }
+        .faq-item.active { border-color: var(--accent); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+        .faq-question { padding: 1.5rem; width: 100%; text-align: left; background: none; border: none; color: var(--text-primary); font-size: 1.1rem; font-weight: 500; font-family: 'Inter', sans-serif; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .faq-icon { color: var(--accent); font-size: 1.5rem; transition: transform 0.3s ease; }
+        .faq-item.active .faq-icon { transform: rotate(45deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0, 1, 0, 1); background: rgba(124, 179, 66, 0.02); }
+        .faq-answer-inner { padding: 0 1.5rem 1.5rem; color: var(--text-secondary); line-height: 1.7; border-top: 1px solid rgba(124, 179, 66, 0.1); margin-top: 1rem; padding-top: 1rem; }
+        .faq-item.active .faq-answer { max-height: 1000px; transition: max-height 0.4s ease-in-out; }
+
+        /* Download */
+        .download { padding: 6rem 5%; text-align: center; }
+        .download-card { max-width: 800px; margin: 0 auto; background: linear-gradient(135deg, rgba(45, 90, 61, 0.1), rgba(17, 26, 20, 0.8)); border: 1px solid rgba(124, 179, 66, 0.2); border-radius: 24px; padding: clamp(1.5rem, 5vw, 3rem); position: relative; overflow: hidden; }
+        .download-card::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(124, 179, 66, 0.1) 0%, transparent 70%); animation: rotate 20s linear infinite; pointer-events: none; }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .download-content { position: relative; z-index: 1; }
+        .filename { font-size: clamp(1.2rem, 3vw, 1.5rem); font-weight: 600; margin-bottom: 0.5rem; word-break: break-all; }
+        .file-meta { color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem; }
+        .hash-box { background: rgba(0, 0, 0, 0.3); padding: 1rem; border-radius: 8px; font-family: 'Courier New', monospace; font-size: clamp(0.7rem, 2vw, 0.875rem); color: var(--accent); margin: 1.5rem 0; border: 1px solid rgba(124, 179, 66, 0.2); word-break: break-all; }
+        .hash-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; opacity: 0.8; }
+        .download-meta { display: flex; justify-content: center; gap: 1.5rem; margin-top: 2rem; flex-wrap: wrap; }
+        .meta-item { display: flex; align-items: center; gap: 0.5rem; color: var(--text-secondary); font-size: 0.875rem; }
 
         /* Footer */
-        footer {
-            padding: 3rem 5%;
-            background: var(--bg-dark);
-            border-top: 1px solid rgba(124, 179, 66, 0.1);
-            text-align: center;
-        }
+        .footer-note { background: rgba(124, 179, 66, 0.05); border-top: 1px solid rgba(124, 179, 66, 0.1); padding: 2rem 5%; text-align: center; font-size: 0.9rem; color: var(--text-secondary); font-style: italic; }
+        footer { padding: 3rem 5%; background: var(--bg-dark); border-top: 1px solid rgba(124, 179, 66, 0.1); text-align: center; }
+        .footer-content { max-width: 1200px; margin: 0 auto; }
+        .footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap; }
+        .footer-links a { color: var(--text-secondary); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--accent); }
+        .social-links { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 2rem; }
+        .social-links a { width: 44px; height: 44px; background: rgba(124, 179, 66, 0.1); border: 1px solid rgba(124, 179, 66, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--text-secondary); text-decoration: none; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .social-links a:hover { background: var(--primary); color: white; transform: translateY(-5px) scale(1.1); box-shadow: 0 5px 15px rgba(124, 179, 66, 0.3); }
+        .copyright { color: rgba(165, 214, 167, 0.5); font-size: 0.875rem; }
 
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+        /* Mobil Menü Butonu (CSS only toggle) */
+        .mobile-menu-btn { display: none; background: none; border: none; color: var(--text-primary); font-size: 1.5rem; cursor: pointer; }
 
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--accent);
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .social-links a {
-            width: 44px;
-            height: 44px;
-            background: rgba(124, 179, 66, 0.1);
-            border: 1px solid rgba(124, 179, 66, 0.2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            background: var(--primary);
-            color: white;
-            transform: translateY(-3px);
-        }
-
-        .copyright {
-            color: rgba(165, 214, 167, 0.5);
-            font-size: 0.875rem;
-        }
-
-        /* Toast Notification */
-        .toast {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: var(--primary);
-            color: white;
-            padding: 1rem 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            transform: translateX(400px);
-            transition: transform 0.3s ease;
-            z-index: 3000;
-            font-weight: 500;
-        }
-
-        .toast.show {
-            transform: translateX(0);
-        }
-
-        /* Responsive */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .download-card {
-                padding: 2rem 1.5rem;
-            }
-
-            .modal {
-                padding: 1.5rem;
-            }
-        }
-
-        /* Scroll animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Admin edit buttons on page */
-        .edit-section-btn {
-            position: fixed;
-            bottom: 2rem;
-            left: 2rem;
-            background: var(--accent);
-            color: var(--bg-dark);
-            border: none;
-            padding: 0.875rem 1.5rem;
-            border-radius: 50px;
-            font-weight: 600;
-            cursor: pointer;
-            box-shadow: 0 4px 20px rgba(124, 179, 66, 0.4);
-            transition: all 0.3s;
-            display: none;
-            align-items: center;
-            gap: 0.5rem;
-            z-index: 100;
-        }
-
-        .edit-section-btn.visible {
-            display: flex;
-        }
-
-        .edit-section-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(124, 179, 66, 0.6);
+            .mobile-menu-btn { display: block; }
+            .nav-links { display: none; /* Basitlik için gizlendi, JS ile açılabilir yapılabilir */ }
+            .hero h1 { font-size: 2.2rem; }
+            .features-grid { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: 1fr; gap: 1rem; }
+            .cta-buttons { flex-direction: column; width: 100%; max-width: 300px; margin: 0 auto; }
+            .btn { width: 100%; justify-content: center; }
+            .download-meta { flex-direction: column; gap: 1rem; align-items: center; }
         }
     </style>
 </head>
@@ -738,35 +284,37 @@
     
     <nav>
         <a href="#" class="logo">
-            <div class="logo-icon"></div>
-            <span>Botan Linux</span>
+            <div class="logo-icon">🌱</div>
+            <span id="navSiteName">Botan Linux</span>
         </a>
+        <button class="mobile-menu-btn">☰</button>
         <ul class="nav-links">
             <li><a onclick="scrollToSection('features')">Özellikler</a></li>
+            <li><a onclick="scrollToSection('community')">Topluluk</a></li>
+            <li><a onclick="scrollToSection('faq')">SSS</a></li>
             <li><a onclick="scrollToSection('download')">İndir</a></li>
-            <li><a href="https://github.com/botan-linux" target="_blank">GitHub</a></li>
-            <li><span class="admin-indicator" id="adminIndicator">ADMIN</span></li>
+            <li><a id="navGithub" href="#" target="_blank">GitHub</a></li>
         </ul>
     </nav>
 
-    <section class="hero">
+    <section class="hero scale-in">
         <div class="hero-content">
             <div class="version-badge">
                 <span>🌿</span>
-                <span id="versionText">Sprout v1.0 Yayında</span>
+                <span id="heroVersionBadge">Sprout v1.0 Yayında</span>
             </div>
-            <h1 id="mainTitle">Gelecek Botan ile Büyüyecek</h1>
-            <p class="hero-subtitle" id="subTitle">Arch Linux tabanlı, modern ve hafif</p>
-            <p class="hero-description" id="description">
+            <h1 id="heroTitle">Gelecek Botan ile Büyüyecek</h1>
+            <p class="hero-subtitle" id="heroSubtitle">Arch Linux tabanlı, modern ve hafif</p>
+            <p class="hero-description" id="heroDescription">
                 Sadeliği ve estetiği modern mimariyle harmanlayan Botan Linux, 
                 verimlilik ve güzelliği bir araya getiriyor.
             </p>
             <div class="cta-buttons">
                 <a href="#download" class="btn btn-primary" onclick="scrollToSection('download'); return false;">
-                    <span>⬇️</span> Hemen İndir
+                    <span>⬇️</span> <span id="ctaPrimary">Hemen İndir</span>
                 </a>
-                <a href="https://github.com/botan-linux" class="btn btn-secondary" target="_blank">
-                    <span>📖</span> Kaynak Kodu
+                <a id="heroGithubBtn" href="#" class="btn btn-secondary" target="_blank">
+                    <span>📖</span> <span id="ctaSecondary">Kaynak Kodu</span>
                 </a>
             </div>
         </div>
@@ -777,381 +325,205 @@
             <h2>Neden Botan Linux?</h2>
             <p>Modern kullanıcı için optimize edilmiş deneyim</p>
         </div>
-        
-        <div class="features-grid">
-            <div class="feature-card fade-in">
-                <div class="feature-icon">🚀</div>
-                <h3>Hafif Mimari</h3>
-                <p>Modern sistem kaynaklarını verimli kullanan optimize yapı.</p>
+        <div class="features-grid" id="featuresGrid">
             </div>
-            
-            <div class="feature-card fade-in">
-                <div class="feature-icon">🐚</div>
-                <h3>Fish Shell</h3>
-                <p>Akıllı otomatik tamamlama ve renkli terminal arayüzü.</p>
-            </div>
-            
-            <div class="feature-card fade-in">
-                <div class="feature-icon">🎨</div>
-                <h3>KDE Plasma</h3>
-                <p>Minimalist ve özelleştirilebilir masaüstü deneyimi.</p>
-            </div>
-            
-            <div class="feature-card fade-in">
-                <div class="feature-icon">🛠️</div>
-                <h3>Calamares</h3>
-                <p>Botan temalı grafiksel kurulumcu ile kolay kurulum.</p>
-            </div>
-            
-            <div class="feature-card fade-in">
-                <div class="feature-icon">🛡️</div>
-                <h3>LTS Kernel</h3>
-                <p>Uzun süreli destek sunan kararlı çekirdek.</p>
-            </div>
-            
-            <div class="feature-card fade-in">
-                <div class="feature-icon">📦</div>
-                <h3>Botan App Store</h3>
-                <p>Discover + Flatpak entegrasyonu.</p>
-            </div>
+    </section>
+
+    <section class="community" id="community">
+        <div class="section-header fade-in">
+            <h2 id="communityTitle">Topluluğumuza Katılın</h2>
+            <p id="communitySubtitle">Açık kaynak ekosisteminde birlikte büyüyoruz</p>
         </div>
+        <div class="stats-grid" id="communityStatsGrid">
+            </div>
+        <div class="community-cta fade-in">
+            <a id="communityDiscordBtn" href="#" class="btn btn-secondary">
+                <span>💬</span> <span id="communityDiscordText">Discord'a Katıl</span>
+            </a>
+        </div>
+    </section>
+
+    <section class="faq" id="faq">
+        <div class="section-header fade-in">
+            <h2 id="faqTitle">Sıkça Sorulan Sorular</h2>
+            <p id="faqSubtitle">Botan Linux hakkında merak edilenler</p>
+        </div>
+        <div class="faq-container" id="faqContainer">
+            </div>
     </section>
 
     <section class="download" id="download">
         <div class="section-header fade-in">
-            <h2 id="downloadTitle">Sprout v1.0</h2>
-            <p>En son kararlı sürüm</p>
+            <h2 id="downloadSectionTitle">Sprout v1.0</h2>
+            <p id="downloadSectionSubtitle">En son kararlı sürüm</p>
         </div>
-        
-        <div class="download-card fade-in">
+        <div class="download-card scale-in">
             <div class="download-content">
-                <div class="filename" id="isoName">botan-sprout-v1.0-x86_64.iso</div>
-                <p class="file-meta" id="fileMeta">Boyut: ~2.1 GB | Arch Linux tabanlı | 64-bit</p>
-                
+                <div class="filename" id="downloadFilename">botan-sprout-v1.0-x86_64.iso</div>
+                <p class="file-meta" id="downloadFileMeta">Boyut: ~2.1 GB | Arch Linux tabanlı | 64-bit</p>
                 <div class="hash-box">
                     <div class="hash-label">SHA256 Doğrulama Hash'i</div>
-                    <div id="sha256Hash">a1b2c3d4e5f6789...</div>
+                    <div id="downloadHash">a1b2c3d4e5f6789...</div>
                 </div>
-                
                 <a href="#" class="btn btn-primary" id="downloadBtn" style="padding: 1.25rem 3rem; font-size: 1.125rem;">
                     <span>💾</span> ISO İndir
                 </a>
-                
                 <div class="download-meta">
-                    <div class="meta-item">
-                        <span>📅</span>
-                        <span id="updateDate">Son güncelleme: 25 Şubat 2026</span>
-                    </div>
-                    <div class="meta-item">
-                        <span>📝</span>
-                        <span>Lisans: GPL-3.0</span>
-                    </div>
-                    <div class="meta-item">
-                        <span>🔧</span>
-                        <span id="commitCount">67 Commit</span>
-                    </div>
+                    <div class="meta-item"><span>📅</span> <span id="metaDate">Son güncelleme: 25 Şubat 2026</span></div>
+                    <div class="meta-item"><span>📝</span> <span>Lisans: GPL-3.0</span></div>
+                    <div class="meta-item"><span>🔧</span> <span id="metaCommits">67 Commit</span></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <div class="footer-note" id="footerNote">
+    <div class="footer-note" id="footerNoteText">
         💡 Not: Bu sürüm deneysel özellikler içermektedir. Üretim ortamında kullanmadan önce yedek almanız önerilir.
     </div>
 
     <footer>
         <div class="footer-content">
-            <div class="footer-links">
-                <a href="#">Gizlilik Politikası</a>
-                <a href="#">Katkıda Bulun</a>
-                <a href="#">Belgeler</a>
-                <a href="#">İletişim</a>
-            </div>
-            
+            <div class="footer-links" id="footerLinks"></div>
             <div class="social-links">
-                <a href="#" title="GitHub">GH</a>
-                <a href="#" title="Twitter">TW</a>
-                <a href="#" title="Discord">DC</a>
-                <a href="#" title="Telegram">TG</a>
+                <a id="socialGithub" href="#" title="GitHub">GH</a>
+                <a id="socialTwitter" href="#" title="Twitter">TW</a>
+                <a id="socialDiscord" href="#" title="Discord">DC</a>
+                <a id="socialTelegram" href="#" title="Telegram">TG</a>
             </div>
-            
-            <p class="copyright">
-                © 2026 Botan Linux. GPL-3.0 ile lisanslanmıştır.
-            </p>
+            <p class="copyright" id="footerCopyright">© 2026 Botan Linux. GPL-3.0 ile lisanslanmıştır.</p>
         </div>
     </footer>
 
-    <!-- Admin Edit Button -->
-    <button class="edit-section-btn" id="editBtn" onclick="openAdminPanel()">
-        <span>⚙️</span> Siteyi Düzenle
-    </button>
-
-    <!-- Admin Panel Modal -->
-    <div class="modal-overlay" id="adminModal">
-        <div class="modal">
-            <div class="modal-header">
-                <h2 class="modal-title">🌱 Botan Admin Paneli</h2>
-                <button class="close-btn" onclick="closeAdminPanel()">&times;</button>
-            </div>
-            
-            <div class="edit-hint">
-                <strong>Bilgi:</strong> Değişiklikler tarayıcınızın yerel deposuna kaydedilir. 
-                Başka bir cihazda görmek için verileri dışa aktarıp oraya aktarmalısınız.
-            </div>
-
-            <form id="adminForm" onsubmit="saveChanges(event)">
-                <h3 style="color: var(--accent); margin-bottom: 1rem; font-size: 1.1rem;">Genel Bilgiler</h3>
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Versiyon Başlığı</label>
-                        <input type="text" id="inputVersion" placeholder="Sprout v1.0 Yayında">
-                    </div>
-                    <div class="form-group">
-                        <label>Ana Başlık</label>
-                        <input type="text" id="inputTitle" placeholder="Gelecek Botan ile Büyüyecek">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label>Alt Başlık</label>
-                    <input type="text" id="inputSubtitle" placeholder="Arch Linux tabanlı, modern ve hafif">
-                </div>
-
-                <div class="form-group">
-                    <label>Açıklama</label>
-                    <textarea id="inputDescription" placeholder="Site açıklaması..."></textarea>
-                </div>
-
-                <h3 style="color: var(--accent); margin: 1.5rem 0 1rem; font-size: 1.1rem;">İndirme Bilgileri</h3>
-                
-                <div class="form-group">
-                    <label>ISO Dosya Adı</label>
-                    <input type="text" id="inputIsoName" placeholder="botan-sprout-v1.0-x86_64.iso">
-                </div>
-
-                <div class="form-group">
-                    <label>İndirme Linki (URL)</label>
-                    <input type="url" id="inputDownloadUrl" placeholder="https://...">
-                </div>
-
-                <div class="form-group">
-                    <label>SHA256 Hash</label>
-                    <input type="text" id="inputHash" placeholder="64 karakterlik hash...">
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Dosya Boyutu</label>
-                        <input type="text" id="inputFileSize" placeholder="~2.1 GB">
-                    </div>
-                    <div class="form-group">
-                        <label>Sürüm Başlığı (İndirme)</label>
-                        <input type="text" id="inputDownloadTitle" placeholder="Sprout v1.0">
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Son Güncelleme</label>
-                        <input type="text" id="inputDate" placeholder="25 Şubat 2026">
-                    </div>
-                    <div class="form-group">
-                        <label>Commit Sayısı</label>
-                        <input type="text" id="inputCommits" placeholder="67 Commit">
-                    </div>
-                </div>
-
-                <h3 style="color: var(--accent); margin: 1.5rem 0 1rem; font-size: 1.1rem;">Dipnot</h3>
-                
-                <div class="form-group">
-                    <label>Footer Notu</label>
-                    <textarea id="inputFooterNote" placeholder="Dipnot mesajı..."></textarea>
-                </div>
-
-                <button type="submit" class="btn btn-primary save-btn">
-                    <span>💾</span> Değişiklikleri Kaydet
-                </button>
-                
-                <button type="button" class="btn btn-danger" style="margin-top: 0.5rem; width: 100%;" onclick="resetToDefaults()">
-                    <span>🔄</span> Varsayılana Sıfırla
-                </button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Toast -->
-    <div class="toast" id="toast">Değişiklikler kaydedildi!</div>
-
     <script>
-        // DEFAULT CONFIGURATION - Bu değerler sıfırlama için kullanılır
-        const DEFAULTS = {
-            version: "Sprout v1.0 Yayında",
-            title: "Gelecek Botan ile Büyüyecek",
-            subtitle: "Arch Linux tabanlı, modern ve hafif",
-            description: "Sadeliği ve estetiği modern mimariyle harmanlayan Botan Linux, verimlilik ve güzelliği bir araya getiriyor.",
-            isoName: "botan-sprout-v1.0-x86_64.iso",
-            downloadUrl: "#",
-            sha256: "a1b2c3d4e5f6789abcdef0123456789abcdef0123456789abcdef0123456789ab",
-            fileSize: "~2.1 GB",
-            downloadTitle: "Sprout v1.0",
-            updateDate: "25 Şubat 2026",
-            commits: "67 Commit",
-            footerNote: "💡 Not: Bu sürüm deneysel özellikler içermektedir. Üretim ortamında kullanmadan önce yedek almanız önerilir."
-        };
+        function initSite() {
+            // Temel bilgiler
+            document.getElementById('navSiteName').textContent = SITE_CONFIG.siteName;
+            document.getElementById('navGithub').href = SITE_CONFIG.social.github;
+            
+            // Hero bölümü
+            document.getElementById('heroVersionBadge').textContent = SITE_CONFIG.versionBadge;
+            document.getElementById('heroTitle').textContent = SITE_CONFIG.hero.title;
+            document.getElementById('heroSubtitle').textContent = SITE_CONFIG.hero.subtitle;
+            document.getElementById('heroDescription').textContent = SITE_CONFIG.hero.description;
+            document.getElementById('ctaPrimary').textContent = SITE_CONFIG.hero.ctaPrimary;
+            document.getElementById('ctaSecondary').textContent = SITE_CONFIG.hero.ctaSecondary;
+            document.getElementById('heroGithubBtn').href = SITE_CONFIG.hero.githubUrl;
+            
+            // Özellikler
+            const featuresGrid = document.getElementById('featuresGrid');
+            SITE_CONFIG.features.forEach(feature => {
+                const card = document.createElement('div');
+                card.className = 'feature-card fade-in';
+                card.innerHTML = `<div class="feature-icon">${feature.icon}</div><h3>${feature.title}</h3><p>${feature.description}</p>`;
+                featuresGrid.appendChild(card);
+            });
 
-        // Şifre: Base64 encode edilmiş "Botan2026!" (Güvenlik için basit obfuscation)
-        // Gerçek kullanımda daha karmaşık bir hash kullanılabilir
-        const ADMIN_PASSWORD = "Qm90YW4yMDI2IQ=="; // Botan2026! -> Base64
-        
-        let isAdmin = false;
+            // YENİ: Topluluk
+            if(SITE_CONFIG.community) {
+                document.getElementById('communityTitle').textContent = SITE_CONFIG.community.title;
+                document.getElementById('communitySubtitle').textContent = SITE_CONFIG.community.subtitle;
+                document.getElementById('communityDiscordText').textContent = SITE_CONFIG.community.discordText;
+                document.getElementById('communityDiscordBtn').href = SITE_CONFIG.community.discordUrl;
+                
+                const statsGrid = document.getElementById('communityStatsGrid');
+                SITE_CONFIG.community.stats.forEach(stat => {
+                    const el = document.createElement('div');
+                    el.className = 'stat-card fade-in';
+                    el.innerHTML = `<div class="stat-value">${stat.value}</div><div class="stat-label">${stat.label}</div>`;
+                    statsGrid.appendChild(el);
+                });
+            }
 
-        // Sayfa yüklendiğinde
+            // YENİ: SSS (Accordion)
+            if(SITE_CONFIG.faq) {
+                document.getElementById('faqTitle').textContent = SITE_CONFIG.faq.title;
+                document.getElementById('faqSubtitle').textContent = SITE_CONFIG.faq.subtitle;
+                
+                const faqContainer = document.getElementById('faqContainer');
+                SITE_CONFIG.faq.items.forEach((item, index) => {
+                    const el = document.createElement('div');
+                    el.className = 'faq-item fade-in';
+                    // İlk soru varsayılan olarak açık gelsin (opsiyonel)
+                    if(index === 0) el.classList.add('active');
+                    
+                    el.innerHTML = `
+                        <button class="faq-question">
+                            <span>${item.q}</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">${item.a}</div>
+                        </div>
+                    `;
+                    
+                    // Tıklama olayı (Accordion mantığı)
+                    el.querySelector('.faq-question').addEventListener('click', () => {
+                        const isActive = el.classList.contains('active');
+                        // Tümünü kapatmak istersen alttaki satırı aktif et:
+                        // document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                        if(!isActive) {
+                            el.classList.add('active');
+                        } else {
+                            el.classList.remove('active');
+                        }
+                    });
+                    
+                    faqContainer.appendChild(el);
+                });
+            }
+            
+            // İndirme bölümü
+            document.getElementById('downloadSectionTitle').textContent = SITE_CONFIG.download.sectionTitle;
+            document.getElementById('downloadSectionSubtitle').textContent = SITE_CONFIG.download.sectionSubtitle;
+            document.getElementById('downloadFilename').textContent = SITE_CONFIG.download.filename;
+            document.getElementById('downloadFileMeta').textContent = `Boyut: ${SITE_CONFIG.download.fileSize} | Arch Linux tabanlı | ${SITE_CONFIG.download.architecture}`;
+            document.getElementById('downloadHash').textContent = SITE_CONFIG.download.sha256;
+            document.getElementById('downloadBtn').href = SITE_CONFIG.download.downloadUrl;
+            document.getElementById('metaDate').textContent = `Son güncelleme: ${SITE_CONFIG.releaseDate}`;
+            document.getElementById('metaCommits').textContent = SITE_CONFIG.commitCount;
+            
+            // Dipnot ve Footer
+            document.getElementById('footerNoteText').textContent = SITE_CONFIG.footerNote;
+            
+            const footerLinks = document.getElementById('footerLinks');
+            SITE_CONFIG.footer.links.forEach(link => {
+                const a = document.createElement('a');
+                a.href = link.url;
+                a.textContent = link.text;
+                footerLinks.appendChild(a);
+            });
+            
+            document.getElementById('socialGithub').href = SITE_CONFIG.social.github;
+            document.getElementById('socialTwitter').href = SITE_CONFIG.social.twitter;
+            document.getElementById('socialDiscord').href = SITE_CONFIG.social.discord;
+            document.getElementById('socialTelegram').href = SITE_CONFIG.social.telegram;
+            document.getElementById('footerCopyright').textContent = SITE_CONFIG.footer.copyright;
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
-            loadData();
-            checkAdminAccess();
+            initSite();
             initScrollAnimations();
             
-            // Hash değişirse veriyi güncelle (diğer tab'larla senkronizasyon için)
-            window.addEventListener('storage', (e) => {
-                if (e.key === 'botanLinuxData') {
-                    loadData();
-                }
-            });
+            // Sayfa yüklendiğinde ilk elemanların görünür olması için manuel tetikleme
+            setTimeout(() => {
+                document.querySelectorAll('.scale-in').forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if(rect.top < window.innerHeight) el.classList.add('visible');
+                });
+            }, 100);
         });
 
-        // Verileri localStorage'dan yükle veya varsayılanları kullan
-        function loadData() {
-            const saved = localStorage.getItem('botanLinuxData');
-            const data = saved ? JSON.parse(saved) : DEFAULTS;
-            
-            // DOM'u güncelle
-            document.getElementById('versionText').textContent = data.version;
-            document.getElementById('mainTitle').textContent = data.title;
-            document.getElementById('subTitle').textContent = data.subtitle;
-            document.getElementById('description').textContent = data.description;
-            document.getElementById('isoName').textContent = data.isoName;
-            document.getElementById('sha256Hash').textContent = data.sha256;
-            document.getElementById('fileMeta').textContent = `Boyut: ${data.fileSize} | Arch Linux tabanlı | 64-bit`;
-            document.getElementById('downloadTitle').textContent = data.downloadTitle;
-            document.getElementById('updateDate').textContent = `Son güncelleme: ${data.updateDate}`;
-            document.getElementById('commitCount').textContent = data.commits;
-            document.getElementById('footerNote').textContent = data.footerNote;
-            
-            const downloadBtn = document.getElementById('downloadBtn');
-            downloadBtn.href = data.downloadUrl;
-            downloadBtn.onclick = data.downloadUrl === '#' ? (e) => { e.preventDefault(); alert('İndirme linki henüz ayarlanmadı!'); } : null;
-        }
-
-        // Admin erişimini kontrol et (URL hash kontrolü)
-        function checkAdminAccess() {
-            const hash = window.location.hash;
-            
-            // URL'de #admin-panel varsa şifre sorma penceresi aç
-            if (hash === '#admin-panel') {
-                setTimeout(() => {
-                    const password = prompt('🔒 Botan Linux Admin Paneli\n\nŞifreyi girin:');
-                    
-                    if (password && btoa(password) === ADMIN_PASSWORD) {
-                        isAdmin = true;
-                        document.getElementById('adminIndicator').classList.add('active');
-                        document.getElementById('editBtn').classList.add('visible');
-                        showToast('Admin modu aktif! Siteyi düzenleyebilirsiniz.');
-                        
-                        // URL'i temizle ama sayfayı yenileme
-                        history.replaceState(null, null, ' ');
-                    } else if (password !== null) {
-                        alert('❌ Hatalı şifre! Erişim reddedildi.');
-                        window.location.hash = '';
-                    }
-                }, 500);
-            }
-        }
-
-        // Admin panelini aç
-        function openAdminPanel() {
-            if (!isAdmin) {
-                alert('Yetkisiz erişim!');
-                return;
-            }
-            
-            const saved = localStorage.getItem('botanLinuxData');
-            const data = saved ? JSON.parse(saved) : DEFAULTS;
-            
-            // Form alanlarını doldur
-            document.getElementById('inputVersion').value = data.version;
-            document.getElementById('inputTitle').value = data.title;
-            document.getElementById('inputSubtitle').value = data.subtitle;
-            document.getElementById('inputDescription').value = data.description;
-            document.getElementById('inputIsoName').value = data.isoName;
-            document.getElementById('inputDownloadUrl').value = data.downloadUrl;
-            document.getElementById('inputHash').value = data.sha256;
-            document.getElementById('inputFileSize').value = data.fileSize;
-            document.getElementById('inputDownloadTitle').value = data.downloadTitle;
-            document.getElementById('inputDate').value = data.updateDate;
-            document.getElementById('inputCommits').value = data.commits;
-            document.getElementById('inputFooterNote').value = data.footerNote;
-            
-            document.getElementById('adminModal').classList.add('active');
-        }
-
-        // Admin panelini kapat
-        function closeAdminPanel() {
-            document.getElementById('adminModal').classList.remove('active');
-        }
-
-        // Değişiklikleri kaydet
-        function saveChanges(e) {
-            e.preventDefault();
-            
-            const newData = {
-                version: document.getElementById('inputVersion').value || DEFAULTS.version,
-                title: document.getElementById('inputTitle').value || DEFAULTS.title,
-                subtitle: document.getElementById('inputSubtitle').value || DEFAULTS.subtitle,
-                description: document.getElementById('inputDescription').value || DEFAULTS.description,
-                isoName: document.getElementById('inputIsoName').value || DEFAULTS.isoName,
-                downloadUrl: document.getElementById('inputDownloadUrl').value || DEFAULTS.downloadUrl,
-                sha256: document.getElementById('inputHash').value || DEFAULTS.sha256,
-                fileSize: document.getElementById('inputFileSize').value || DEFAULTS.fileSize,
-                downloadTitle: document.getElementById('inputDownloadTitle').value || DEFAULTS.downloadTitle,
-                updateDate: document.getElementById('inputDate').value || DEFAULTS.updateDate,
-                commits: document.getElementById('inputCommits').value || DEFAULTS.commits,
-                footerNote: document.getElementById('inputFooterNote').value || DEFAULTS.footerNote
-            };
-            
-            localStorage.setItem('botanLinuxData', JSON.stringify(newData));
-            loadData();
-            closeAdminPanel();
-            showToast('✅ Değişiklikler başarıyla kaydedildi!');
-        }
-
-        // Varsayılanlara sıfırla
-        function resetToDefaults() {
-            if (confirm('⚠️ Tüm değişiklikler silinecek ve varsayılan değerlere dönülecek. Emin misiniz?')) {
-                localStorage.removeItem('botanLinuxData');
-                loadData();
-                closeAdminPanel();
-                showToast('🔄 Varsayılan ayarlara döndürüldü.');
-            }
-        }
-
-        // Toast bildirimi göster
-        function showToast(message) {
-            const toast = document.getElementById('toast');
-            toast.textContent = message;
-            toast.classList.add('show');
-            setTimeout(() => toast.classList.remove('show'), 3000);
-        }
-
-        // Smooth scroll
         function scrollToSection(id) {
             const element = document.getElementById(id);
             if (element) {
-                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                // Header yüksekliğini hesaba katarak scroll
+                const headerOffset = 80;
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
             }
         }
 
-        // Scroll animasyonları
         function initScrollAnimations() {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -1159,34 +531,23 @@
                         entry.target.classList.add('visible');
                     }
                 });
-            }, { threshold: 0.1 });
+            }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
 
-            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+            document.querySelectorAll('.fade-in, .scale-in').forEach(el => observer.observe(el));
             
-            // Navbar scroll efekti
             window.addEventListener('scroll', () => {
                 const nav = document.querySelector('nav');
-                if (window.pageYOffset > 100) {
+                if (window.pageYOffset > 50) {
                     nav.style.background = 'rgba(10, 15, 12, 0.95)';
                     nav.style.padding = '1rem 5%';
+                    nav.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.5)';
                 } else {
                     nav.style.background = 'rgba(10, 15, 12, 0.8)';
                     nav.style.padding = '1.5rem 5%';
+                    nav.style.boxShadow = 'none';
                 }
             });
         }
-
-        // Modal dışına tıklayınca kapat
-        document.getElementById('adminModal').addEventListener('click', (e) => {
-            if (e.target === document.getElementById('adminModal')) {
-                closeAdminPanel();
-            }
-        });
-
-        // ESC tuşu ile kapat
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeAdminPanel();
-        });
     </script>
 </body>
 </html>
