@@ -31,7 +31,7 @@ jobs:
           ln -sf /etc/systemd/system/botan-setup.service airootfs/etc/systemd/system/multi-user.target.wants/botan-setup.service
           
           # Script'e çalıştırma yetkisi ver
-          chmod +x airootfs/usr/local/bin/botan-fixer.sh
+          chmod +x airootfs/usr/local/bin/botan-fixerr.sh
 
       - name: 5. ISO Derleme (Docker İçinde)
         run: |
