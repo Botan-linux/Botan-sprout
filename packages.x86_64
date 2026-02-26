@@ -29,7 +29,7 @@ powerdevil
 discover
 packagekit-qt6
 flatpak
-discover-backend-flatpak
+flatpak-kcm
 appstream-qt
 fwupd
 
@@ -90,7 +90,7 @@ polkit-qt6
 python
 boost-libs
 icu
-kpmcore              # Calamares'in disk bölümlendirme motoru
+kpmcore              
 ckbcomp
 # --- GEREKLİ DİĞER ARAÇLAR ---
 lsb-release
