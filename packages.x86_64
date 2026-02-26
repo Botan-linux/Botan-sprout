@@ -90,7 +90,7 @@ polkit-qt6
 python
 boost-libs
 icu
-kpmcore              
+kpmcore
 ckbcomp
 # --- GEREKLİ DİĞER ARAÇLAR ---
 lsb-release
