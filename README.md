@@ -33,7 +33,7 @@ Botan Linux, kullanıcılara "saf" bir Arch deneyimi sunarken modern dokunuşlar
 
 ## 📥 İndir (Release)
 En güncel ISO dosyasını doğrudan Google drive den üzerinden (Hızlı İndirme) indirebilirsiniz:
-👉 **[Botan Linux v1.0 ISO İndir (Direct Download)](https://drive.google.com/uc?export=download&id=1vOMT_499z-DegcoeS-0dGSYcKnhqVbjo)**
+👉 **[Botan Linux v1.0 ISO İndir (Direct Download)](https://drive.google.com/file/d/1rREHIEpkoYB1t0Hc6rTuc7W0J5IfI2Xg/view?usp=sharing)**
 
 ---
 
