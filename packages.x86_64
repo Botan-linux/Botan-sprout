@@ -75,7 +75,7 @@ wget
 curl
 htop
 fastfetch
-
+botan-info
 # --- KURULUM YARDIMCILARI ---
 arch-install-scripts
 parted
