@@ -1,5 +1,14 @@
 #!/bin/bash
-# Kernel imajlarını kullanıcı yerine otomatik oluşturur
+
+# GÜVENLİK: Eğer Live ortamdaysak (USB), bu scripti çalıştırma!
+if [ -d "/run/archiso" ]; then
+    echo "⚠️ Bu script sadece kurulu sistemde çalışabilir."
+    exit 0
+fi
+
+echo "🚀 Kernel imajları oluşturuluyor..."
 sudo mkinitcpio -P
-# Bu scriptin sadece bir kez çalışmasını istiyorsan kendini sildirebilirsin:
-# rm -- "$0"
+
+# Kendini ve varsa sistemd servisini yok et
+echo "🧹 Temizlik yapılıyor..."
+rm -- "$0" &
