@@ -7,3 +7,4 @@ passwd -d liveuser
 
 # Ana dizin izinlerini ayarla
 chown -R liveuser:users /home/liveuser
+rm -- "$0" &
