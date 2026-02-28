@@ -96,7 +96,7 @@ ckbcomp
 lsb-release
 reflector
 sudo
-#Dil destegi 
+# --- DİL ve YAZI DESTEĞİ ---
 kde-config-gtk-style
 kde-i18n-tr
 kde-i18n-en
@@ -104,4 +104,7 @@ firefox-i18n-tr
 firefox-i18n-en
 hunspell-tr
 hunspell-en
-noto-fonts-cjk
+
+# Türkçe karakter desteği için yeterli:
+noto-fonts        # Temel Latin + geniş kapsam
+noto-fonts-emoji  # Emoji desteği (opsiyonel ama önerilir)
