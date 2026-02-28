@@ -4,6 +4,9 @@ After=network.target
 
 [Service]
 Type=oneshot
+# İlk olarak netinstall ayarlarını yap
+ExecStart=/usr/local/bin/botan-net-config.sh
+# Sonra ana yapılandırma scriptini çalıştır (mkinitcpio vb.)
 ExecStart=/usr/local/bin/botan-first-boot.sh
 RemainAfterExit=yes
 
