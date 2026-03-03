@@ -7,61 +7,59 @@ CONF_FILE="$CONF_DIR/netinstall.conf"
 
 echo "🌱 Botan Linux Netinstall yapılandırılıyor..."
 
-# Klasörün varlığından emin ol (Hata vermemesi için)
 mkdir -p "$CONF_DIR"
 
-# 1. netinstall.conf Oluşturma
+# 1. netinstall.conf (Daha temiz ve standart yapı)
 cat <<EOF > "$CONF_FILE"
 ---
-groupsUrl: "file:///etc/calamares/modules/netinstall.yaml"
+groupsUrl: "/etc/calamares/modules/netinstall.yaml"
 required: false
 label:
     sidebar: "Masaüstü"
     title: "Masaüstü Ortamı Seçimi"
 EOF
 
-# 2. netinstall.yaml Oluşturma
+# 2. netinstall.yaml (Calamares'in sevdiği formatta)
 cat <<EOF > "$YAML_FILE"
 ---
-- name: "Botan Masaüstü Seçenekleri"
+- name: "Botan Desktop Environments"
   description: "Lütfen kurmak istediğiniz masaüstü ortamını seçiniz."
   critical: true
   groups:
-    - name: "XFCE (Hafif ve Hızlı)"
-      description: "Düşük kaynak tüketen, stabil masaüstü."
+    - name: "XFCE Edition"
+      description: "Hafif ve Hızlı"
       packages:
         - xfce4
         - xfce4-goodies
         - lightdm
         - lightdm-gtk-greeter
 
-    - name: "KDE Plasma (Modern ve Şık)"
-      description: "Yüksek özelleştirilebilir modern arayüz."
+    - name: "KDE Plasma"
+      description: "Modern ve Şık"
       packages:
         - plasma-desktop
         - sddm
         - dolphin
         - konsole
 
-    - name: "GNOME (Sade ve Akıcı)"
-      description: "Modern ve minimalist kullanıcı deneyimi."
+    - name: "GNOME"
+      description: "Sade ve Akıcı"
       packages:
         - gnome
         - gnome-extra
         - gdm
 
-    - name: "Botan Standart Araçlar"
-      description: "Botan Linux için temel sistem araçları."
-      hidden: false
+    - name: "Botan Essential Tools"
+      description: "Temel araçlar (Önerilir)"
       selected: true
       packages:
         - firefox
-        - neofetch
         - git
         - base-devel
+        - fastfetch
 EOF
 
-echo "✅ Netinstall dosyaları hazırlandı."
+echo "✅ Netinstall dosyaları standartlara uygun hale getirildi."
 
-# Sadece kendi script dosyasını sil (Service dosyasını shellprocess silecek)
+# Kendini silme işlemi
 rm -f "$0"
