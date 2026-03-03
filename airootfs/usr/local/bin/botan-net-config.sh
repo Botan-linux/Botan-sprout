@@ -1,26 +1,36 @@
 #!/bin/bash
 
-# Botan Linux Netinstall Yapılandırma Hazırlayıcı
-CONF_DIR="/etc/calamares/modules"
+# Botan Linux Netinstall Hazırlayıcı (Kendi Kendini Silen Versiyon)
+CONF_DIR="/usr/share/calamares/modules/netinstall"
 YAML_FILE="$CONF_DIR/netinstall.yaml"
 CONF_FILE="$CONF_DIR/netinstall.conf"
 
 echo "🌱 Botan Linux Netinstall yapılandırılıyor..."
 
+# 1. Root Kontrolü
+if [ "$EUID" -ne 0 ]; then
+  echo "❌ Hata: Lütfen bu betiği sudo ile çalıştırın."
+  exit 1
+fi
+
+# 2. Klasör Hazırlığı
 mkdir -p "$CONF_DIR"
 
-# 1. netinstall.conf (Daha temiz ve standart yapı)
-cat <<EOF > "$CONF_FILE"
+# 3. Eski/Çakışan dosyaları temizle
+rm -f "$CONF_FILE" "$YAML_FILE"
+
+# 4. netinstall.conf Oluşturma
+cat << 'EOF' > "$CONF_FILE"
 ---
-groupsUrl: "/etc/calamares/modules/netinstall.yaml"
+groupsUrl: "file:///usr/share/calamares/modules/netinstall/netinstall.yaml"
 required: false
 label:
     sidebar: "Masaüstü"
     title: "Masaüstü Ortamı Seçimi"
 EOF
 
-# 2. netinstall.yaml (Calamares'in sevdiği formatta)
-cat <<EOF > "$YAML_FILE"
+# 5. netinstall.yaml Oluşturma
+cat << 'EOF' > "$YAML_FILE"
 ---
 - name: "Botan Desktop Environments"
   description: "Lütfen kurmak istediğiniz masaüstü ortamını seçiniz."
@@ -59,7 +69,16 @@ cat <<EOF > "$YAML_FILE"
         - fastfetch
 EOF
 
-echo "✅ Netinstall dosyaları standartlara uygun hale getirildi."
+# 6. İzinleri Ayarla
+chmod 644 "$CONF_FILE" "$YAML_FILE"
 
-# Kendini silme işlemi
-rm -f "$0"
+# 7. Doğrulama ve Kendi Kendini Silme
+if [ -s "$YAML_FILE" ]; then
+    echo "✅ Botan Netinstall başarıyla yapılandırıldı!"
+    echo "📍 Konum: $CONF_DIR"
+    echo "♻️ İşlem tamamlandı, script kendisini siliyor..."
+    rm -- "$0"
+else
+    echo "❌ Hata: Dosyalar oluşturulamadı! Script silinmedi."
+    exit 1
+fi
