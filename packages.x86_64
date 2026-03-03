@@ -99,7 +99,6 @@ sudo
 # --- DİL ve YAZI DESTEĞİ ---
 kde-gtk-config
 firefox-i18n-tr
-firefox-i18n-en
 hunspell-tr
 hunspell-en_us
 
