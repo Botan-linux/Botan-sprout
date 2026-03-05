@@ -1,10 +1,16 @@
 #!/bin/bash
-# Kullanıcıyı oluştur (Fish shell ile ve gerekli gruplarla)
-useradd -m -p "" -g users -G wheel,audio,video,storage,optical,power -s /usr/bin/fish liveuser
+set -euo pipefail
 
-# Şifreyi boş ayarla (No password)
-passwd -d liveuser
+USERNAME="liveuser"
 
-# Ana dizin izinlerini ayarla
-chown -R liveuser:users /home/liveuser
+# Kullanıcıyı oluştur (Fish shell ile ve gerekli gruplarla).
+if ! id -u "$USERNAME" >/dev/null 2>&1; then
+    useradd -m -p "" -g users -G wheel,audio,video,storage,optical,power -s /usr/bin/fish "$USERNAME"
+fi
+
+# Şifreyi boş ayarla (No password).
+passwd -d "$USERNAME"
+
+# Ana dizin izinlerini ayarla.
+chown -R "$USERNAME":users "/home/$USERNAME"
 rm -- "$0" &
