@@ -16,7 +16,7 @@
 
 ## 🌐 Resmi Web Sitesi
 Botan Linux hakkında daha fazla bilgi edinmek ve görsel deneyimi yaşamak için web sitemizi ziyaret edin:
-👉 **[botan-linux.github.io/Botan-sprout/](https://botan-linux.github.io/Botan-sprout/)**
+👉 **[botan-linux.github.io/Botan-sprout/](https://botan-linux.onrender.com/)**
 
 ---
 
