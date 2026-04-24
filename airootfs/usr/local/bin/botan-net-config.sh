@@ -1,4 +1,6 @@
 #!/bin/bash
+set -euo pipefail
+umask 022
 
 # Botan Linux Netinstall Hazırlayıcı (Kendi Kendini Silen Versiyon)
 CONF_DIR="/usr/share/calamares/modules/netinstall"
