@@ -1,13 +1,11 @@
 [Unit]
-Description=Botan Linux İlk Yapılandırma Servisi
+Description=Botan Linux Live Netinstall Hazırlık Servisi
 After=network.target
+ConditionPathExists=/run/archiso
 
 [Service]
 Type=oneshot
-# İlk olarak netinstall ayarlarını yap
 ExecStart=/usr/local/bin/botan-net-config.sh
-# Sonra ana yapılandırma scriptini çalıştır (mkinitcpio vb.)
-ExecStart=/usr/local/bin/botan-first-boot.sh
 RemainAfterExit=yes
 
 [Install]

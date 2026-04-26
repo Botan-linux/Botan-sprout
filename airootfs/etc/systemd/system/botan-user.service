@@ -1,6 +1,7 @@
 [Unit]
 Description=Botan Linux Live User Creator
 Before=display-manager.service
+ConditionPathExists=/run/archiso
 
 [Service]
 Type=oneshot
