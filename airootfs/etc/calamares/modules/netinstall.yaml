@@ -1,0 +1,37 @@
+---
+- name: "Botan Desktop Environments"
+  description: "Lütfen kurmak istediğiniz masaüstü ortamını seçiniz."
+  critical: true
+  groups:
+    - name: "KDE Plasma (Önerilen)"
+      description: "Modern ve şık varsayılan deneyim"
+      selected: true
+      packages:
+        - plasma-desktop
+        - sddm
+        - dolphin
+        - konsole
+
+    - name: "XFCE Edition"
+      description: "Hafif ve hızlı"
+      packages:
+        - xfce4
+        - xfce4-goodies
+        - lightdm
+        - lightdm-gtk-greeter
+
+    - name: "GNOME"
+      description: "Sade ve akıcı"
+      packages:
+        - gnome
+        - gnome-extra
+        - gdm
+
+    - name: "Botan Essential Tools"
+      description: "Temel araçlar (önerilir)"
+      selected: true
+      packages:
+        - firefox
+        - git
+        - base-devel
+        - fastfetch
