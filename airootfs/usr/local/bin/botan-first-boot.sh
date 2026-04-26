@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 
 # GÜVENLİK: Eğer Live ortamdaysak (USB), bu scripti çalıştırma!
 if [ -d "/run/archiso" ]; then
@@ -7,8 +8,6 @@ if [ -d "/run/archiso" ]; then
 fi
 
 echo "🚀 Kernel imajları oluşturuluyor..."
-sudo mkinitcpio -P
+mkinitcpio -P
 
-# Kendini ve varsa sistemd servisini yok et
-echo "🧹 Temizlik yapılıyor..."
-rm -- "$0" &
+echo "✅ İlk açılış çekirdek hazırlığı tamamlandı."

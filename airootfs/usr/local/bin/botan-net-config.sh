@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Botan Linux Netinstall Hazırlayıcı (Kendi Kendini Silen Versiyon)
-CONF_DIR="/usr/share/calamares/modules/netinstall"
+# Botan Linux Netinstall Hazırlayıcı (Kalıcı Versiyon)
+CONF_DIR="/etc/calamares/modules"
 YAML_FILE="$CONF_DIR/netinstall.yaml"
 CONF_FILE="$CONF_DIR/netinstall.conf"
 
@@ -22,7 +22,7 @@ rm -f "$CONF_FILE" "$YAML_FILE"
 # 4. netinstall.conf Oluşturma
 cat << 'EOF' > "$CONF_FILE"
 ---
-groupsUrl: "file:///usr/share/calamares/modules/netinstall/netinstall.yaml"
+groupsUrl: "file:///etc/calamares/modules/netinstall.yaml"
 required: false
 label:
     sidebar: "Masaüstü"
@@ -37,15 +37,16 @@ cat << 'EOF' > "$YAML_FILE"
   critical: true
   groups:
     - name: "XFCE Edition"
-      description: "Hafif ve Hızlı"
+      description: "Hafif ve hızlı"
       packages:
         - xfce4
         - xfce4-goodies
         - lightdm
         - lightdm-gtk-greeter
 
-    - name: "KDE Plasma"
-      description: "Modern ve Şık"
+    - name: "KDE Plasma (Önerilen)"
+      description: "Modern ve şık varsayılan deneyim"
+      selected: true
       packages:
         - plasma-desktop
         - sddm
@@ -53,14 +54,14 @@ cat << 'EOF' > "$YAML_FILE"
         - konsole
 
     - name: "GNOME"
-      description: "Sade ve Akıcı"
+      description: "Sade ve akıcı"
       packages:
         - gnome
         - gnome-extra
         - gdm
 
     - name: "Botan Essential Tools"
-      description: "Temel araçlar (Önerilir)"
+      description: "Temel araçlar (önerilir)"
       selected: true
       packages:
         - firefox
@@ -72,13 +73,12 @@ EOF
 # 6. İzinleri Ayarla
 chmod 644 "$CONF_FILE" "$YAML_FILE"
 
-# 7. Doğrulama ve Kendi Kendini Silme
+# 7. Doğrulama
 if [ -s "$YAML_FILE" ]; then
     echo "✅ Botan Netinstall başarıyla yapılandırıldı!"
     echo "📍 Konum: $CONF_DIR"
-    echo "♻️ İşlem tamamlandı, script kendisini siliyor..."
-    rm -- "$0"
+    echo "♻️ İşlem tamamlandı, script sistemde korunuyor (tekrar çalıştırılabilir)."
 else
-    echo "❌ Hata: Dosyalar oluşturulamadı! Script silinmedi."
+    echo "❌ Hata: Dosyalar oluşturulamadı! Script korunuyor."
     exit 1
 fi

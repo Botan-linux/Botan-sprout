@@ -1,6 +1,7 @@
 [Unit]
 Description=Botan Linux İlk Yapılandırma Servisi
 After=network.target
+ConditionPathExists=!/run/archiso
 
 [Service]
 Type=oneshot
